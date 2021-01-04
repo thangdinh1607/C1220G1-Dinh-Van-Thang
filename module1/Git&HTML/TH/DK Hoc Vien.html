@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí học viên</title>
+</head>
+<body>
+<style>
+    h1{
+    background-color: aqua;
+}
+    input{
+        margin-left: 50px;
+    }
+    form{
+        background-color: yellow;
+    }
+    select{
+        margin-left: 80px;
+    }
+    button{
+        margin-left: 80px;
+        
+    }
+</style>
+
+<form action="thangdinh.html" method="post">
+<h1 style="color: blue">
+    Register Of Students
+</h1>
+    Full Name<input type="text" name="fullname"><br>
+    Birth Day <input type="date" name="day"><br>
+    Sex       <input type="radio" name="Nam">Male
+                <input type="radio" name="Nu">Female<br>
+    Address <br>
+                <textarea style="margin-left: 120px" rows="5" cols="30" name="address"></textarea><br>
+    Class
+<select>
+    <option value="chuachon">---Chọn Lớp---</option>
+    <option value="lop10">---10--- </option>
+    <option value="lop11">---11--- </option>
+    <option value="lop12">---12--- </option>
+</select><br>
+
+    Email       <input  style="margin-left: 75px" type="text" name="email"><br>
+    Phone Number <input  style="margin-left: 20px"    type="text" name="number"><br>
+    <button type="submit">Đăng Kí</button>
+    <button type="reset">Nhập lại</button>
+</form>
+
+</body>
+</html>
