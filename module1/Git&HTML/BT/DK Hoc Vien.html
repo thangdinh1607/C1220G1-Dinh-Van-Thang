@@ -13,7 +13,12 @@
         margin-left: 50px;
     }
     form{
+
+        border-style: ridge;
         background-color: yellow;
+        padding: 10px;
+        margin-right: 100px;
+        margin-left: 100px;
     }
     select{
         margin-left: 80px;
@@ -24,7 +29,7 @@
     }
 </style>
 
-<form action="thangdinh.html" method="post">
+<form   action="thangdinh.html" method="post">
 <h1 style="color: blue">
     Register Of Students
 </h1>
@@ -36,10 +41,10 @@
                 <textarea style="margin-left: 120px" rows="5" cols="30" name="address"></textarea><br>
     Class
 <select>
-    <option value="chuachon">---Chọn Lớp---</option>
-    <option value="lop10">---10--- </option>
-    <option value="lop11">---11--- </option>
-    <option value="lop12">---12--- </option>
+    <option name="none">---Chọn Lớp---</option>
+    <option name="lop10">---10--- </option>
+    <option name="lop11">---11--- </option>
+    <option name="lop12">---12--- </option>
 </select><br>
 
     Email       <input  style="margin-left: 75px" type="text" name="email"><br>
@@ -47,6 +52,5 @@
     <button type="submit">Đăng Kí</button>
     <button type="reset">Nhập lại</button>
 </form>
-
 </body>
 </html>
