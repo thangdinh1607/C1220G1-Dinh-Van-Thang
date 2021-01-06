@@ -9,6 +9,14 @@
         border-collapse: collapse;
 
     }
+    table tr:nth-child(odd) td:nth-child(even) , table tr:nth-child(even) td:nth-child(odd){
+        background-color: black;
+    }
+    table tr:nth-child(odd) td:nth-child(odd), table tr:nth-child(even) td:nth-child(even) {
+        background-color: red;
+    }
+
+
     td{
         width: 30px;
         height: 30px;
