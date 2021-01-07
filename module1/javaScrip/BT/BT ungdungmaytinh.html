@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Ứng dụng máy tính</title>
 </head>
 <body>
-$END$
+<h2>Caculator</h2>
+<form>
+    <input type="text" id="o1" name="number">
+    <input type="text" id="o2" name="number"><br><br>
+
+    <button type="button" onclick="sum()">Addition(+)</button>
+    <button type="button" onclick="sub()">Subtraction(-)</button>
+    <button type="button" onclick="mut()">Mutiplication(X)</button>
+    <button type="button" onclick="div()">Division(/)</button>
+    <script>
+
+        function sum() {
+            let omot = document.getElementById("o1");
+            let oso1=parseFloat(omot.value);
+            let ohai = document.getElementById("o2");
+            let oso2=parseFloat(ohai.value);
+            let sum =oso1+oso2;
+            document.write("sum :" + sum);
+        }
+
+        function sub() {
+            let omot=document.getElementById("o1");
+            let oso1=parseFloat(omot.value);
+            let ohai=document.getElementById("o2");
+            let oso2=parseFloat(ohai.value);
+            let sub =oso1-oso2;
+            document.write("sub :" +sub);
+        }
+        function mut() {
+            let omot=document.getElementById("o1");
+            let oso1=parseFloat(omot.value);
+            let ohai=document.getElementById("o2");
+            let oso2=parseFloat(ohai.value);
+            let mut=oso1*oso2;
+            document.write("mut :" +mut);
+        }
+        function div() {
+            let omot = document.getElementById("o1");
+            let oso1 = parseFloat(omot.value);
+            let ohai = document.getElementById("o2");
+            let oso2 = parseFloat(ohai.value);
+            let div = oso1 / oso2;
+            document.write("div :" + div);
+        }
+    </script>
+</form>
 </body>
 </html>

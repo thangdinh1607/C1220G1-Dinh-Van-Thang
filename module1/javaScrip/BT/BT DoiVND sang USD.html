@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Chuyển đổi tiền tệ</title>
 </head>
+<style>
+    table {
+        width: 100%;
+        text-align: center;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
 <body>
-$END$
+<h2>Chuyển đổi tiền</h2>
+<form>
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Curency</th>
+            <th>To Curency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="count" name="number">
+            </td>
+            <td>
+                <select id="from" style="width: 150px">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="to" style="width: 150px">
+                    <option value="vnd">VND</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <input style="background: cadetblue" type="button" onclick="convert()" value="Convert">
+            </td>
+        </tr>
+    </table>
+    <p style="color: blue" id="ketqua"></p>
+</form>
+<script>
+    // kéo giá trị về
+        let amount = document.getElementById("count");
+
+
+        let frCurr = document.getElementById("from");
+
+        let toCurr = document.getElementById("to");
+
+
+
+
+
+    function convert() {
+    //khai báo giá trị
+        let amount1 = parseFloat(amount.value);
+        let frCurr1 = frCurr.value;
+        let toCurr1 = toCurr.value;
+
+        let usdvnd = amount1*23000;
+        let vndusd = amount1/23000;
+
+
+            if (frCurr1 === "vnd" && toCurr1==="vnd") {
+                // document.write("result: " + amount1);
+                document.getElementById("ketqua").innerHTML = "Result " + amount1 + " VND";
+
+            } else if (frCurr1 ==="usd" && toCurr1==="usd") {
+                document.getElementById("ketqua").innerHTML = "Result" +amount1 + " USD";
+            } else if (frCurr1 === "vnd" && toCurr1==="usd"){
+                document.getElementById("ketqua").innerHTML = "Result " +vndusd + " USD";
+            } else {
+                document.getElementById("ketqua").innerHTML =  "Result" +usdvnd + " VND";
+            }
+    }
+
+</script>
 </body>
 </html>
