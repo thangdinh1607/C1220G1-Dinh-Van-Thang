@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh switch-case</title>
+</head>
+<body>
+<h2>Tính số ngày trong 1 tháng</h2>
+        <input id="m1" type="text"/> <button onclick="date1()">Tính số ngày</button>
+
+        <input id = "m2" type="text"/> <button onclick="date2()">TÍnh số ngày</button>
+         <p id ="resuilt">Tab 1 </p>Và <p id ="resuilt2">Tab 2 </p>
+
+
+<script>
+         let month = document.getElementById("m1");
+         let month3 = document.getElementById("m2");
+            function date1() {
+                    month1 = parseInt(month.value);
+            switch (month1) {
+                case 1 :
+                case 3 :
+                case 5 :
+                case 7 :
+                case 8 :
+                case 10 :
+                case 12 :
+                document.getElementById("resuilt").innerText= "Tháng " + month1 +  " có 31 ngày." ;
+                break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                 document.getElementById("resuilt").innerText="Tháng " + month1 + " có 30 ngày."  ;
+                 break;
+                case 2 :
+                 document.getElementById("resuilt").innerText = "Tháng " +month1+ " có 28 hoặc 29 ngày.";
+                 break;
+                 default :
+                  document.getElementById("resuilt").innerText = " Nhập sai ngày."   ;
+
+            }
+            }
+         function date2() {
+             month2 = parseInt(month3.value);
+             switch (month2) {
+                 case 1 :
+                 case 3 :
+                 case 5 :
+                 case 7 :
+                 case 8 :
+                 case 10 :
+                 case 12 :
+                     document.getElementById("resuilt2").innerText= "Tháng " + month2 +  " có 31 ngày." ;
+                     break;
+                 case 4:
+                 case 6:
+                 case 9:
+                 case 11:
+                     document.getElementById("resuilt2").innerText="Tháng " + month2 + " có 30 ngày."  ;
+                     break;
+                 case 2 :
+                     document.getElementById("resuilt2").innerText = "Tháng " +month2+ " có 28 hoặc 29 ngày.";
+                     break;
+                 default :
+                     document.getElementById("resuilt2").innerText = " Nhập sai ngày."   ;
+             }
+         }
+
+</script>
+
+</body>
+</html>

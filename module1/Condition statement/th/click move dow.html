@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click move dow</title>
+</head>
+<body>
+<style>
+    input,p,img{
+        margin-left: 250px;
+    }
+    p{
+        color: deepskyblue;
+    }
+    input{
+        color: red;
+    }
+</style>
+<form>
+    <p>Kích chuột chạy xuống</p>
+    <input style="background: blue" type="button" value="Click here" onclick="moveDown()"><br>
+    <img id="bong" src="images.jpg">
+</form>
+<script>
+    let bongObj = null;
+     bongObj = document.getElementById("bong");
+            function init() {
+                 bongObj=document.getElementById("bong");
+                 bongObj.style.position="relative";
+                 bongObj.style.top = "0px";
+         }
+           function moveDown() {
+                 bongObj.style.top=parseInt(bongObj.style.top) + 10 + "px";
+           }
+             window.onload=init();
+</script>
+</body>
+</html>

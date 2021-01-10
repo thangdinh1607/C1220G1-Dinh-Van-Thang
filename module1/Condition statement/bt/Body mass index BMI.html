@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng của cở thể</title>
+</head>
+<body>
+<p>Body mass index-BMI</p>
+Chiều cao (m) <input id="height" type="text" name="chieucao"/>
+Cân nặng (kg) <input id="weight" type="text" name="cannang"/>
+<button type="button" onclick="bodyMassindex()" >BMI</button><br>
+Chỉ số BMI là : <p id="bmi"></p>
+
+<script>
+    //kéo giá trị về
+         let hei =document.getElementById("height");
+         let wei=document.getElementById("weight");
+
+         function bodyMassindex() {
+     //khai báo giá trị
+             weight = parseFloat(wei.value);
+             height = parseFloat(hei.value);
+            let bmi = weight/(height*height);
+
+            if (bmi < 18){
+                document.getElementById("bmi").innerText= bmi + " - Underweight" ;
+            } else if (bmi < 25){
+                 document.getElementById("bmi").innerText = bmi + "- Nomal";
+            } else if  (bmi < 30){
+                 document.getElementById("bmi").innerText= bmi + " -Overweight";
+             } else
+                 document.getElementById("bmi").innerText = bmi + "-Obese";
+         }
+</script>
+</body>
+</html>
