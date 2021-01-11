@@ -52,6 +52,7 @@
             <td><input type="button" class="operator" id="clear" name="clear" value="C" onclick="calculator.display.value = ''"></td>
             <td><input type="button" class="operator" name="zero" value="0" onclick="calculator.display.value += '0'"></td>
             <td><input type="button" class="operator" name="doit" value="=" onclick="calculator.display.value = eval(calculator.display.value)"></td>
+            ///ham eval biến đổi chuỗi thành số và thực hiện phép tính trong chuỗi đó
             <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
         </tr>
     </table>

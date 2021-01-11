@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chương</title>
+</head>
+<body>
+<style>
+    table{
+        text-align: center;
+        height: 300px;
+        width: 600px;
+        margin-left: 120px;
+
+    }
+    h2{
+        color: red;
+        text-align: center;
+    }
+</style>
+<h2>Bảng cửu chương</h2>
+<script>
+    let bcc,i,j,e;
+    bcc="<table border= '1' cellspacing='10'>";
+
+    for(i=1;i<=8;i++){
+        bcc=bcc+"<tr>";
+        for (j=2;j<=9;j++){
+                bcc = bcc + "<td>"+ j+ "x"+i +"=" +j*i + "</td>";
+            }
+        bcc=bcc+"</tr>";
+    }
+    bcc=bcc+"</table>";
+    document.write(bcc);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Condition Statement2</title>
+</head>
+<body>
+<!--////BT1-->
+<!--<script>-->
+<!--    let c=prompt("Nhập vào độ C");-->
+<!--    let f=c*9/5 +32;-->
+<!--    alert(f+ "độ F");-->
+<!--</script>-->
+<!--///BT2-->
+<!--<h2>Chuyển từ met sang ft</h2>-->
+<!--Nhập vào số met<input id="m"type="text">-->
+<!--<input type="button" value="Covert" onclick="doiMsangf()">-->
+<!--<p id="resuilt"></p>-->
+<!--<script>-->
+<!--    function doiMsangf() {-->
+<!--        let m = parseFloat(document.getElementById("m").value);-->
+<!--        let f = m*3.2808;-->
+<!--        document.getElementById("resuilt").innerText= "Resuilt :" + m+ "ft";-->
+<!--    }-->
+<!--// </script>-->
+<!--///BT3-->
+<!--<script>-->
+<!--    let a =prompt("Nhập vào cạnh a");-->
+<!--    let acregeSquare=a*a-->
+<!--    alert("Diện tích hình vuông là :" + acregeSquare);-->
+<!--</script>-->
+<!--//////BT4-->
+<!--<h2>Tính diện tích hình chữ nhật</h2>-->
+<!--Nhập cạnh a <input id="a" type="text"><br><br>-->
+
+<!--Nhập cạnh b <input id ="b"type="text"><br><br>-->
+<!--<input type="button" onclick="acregeRectangle()" value="Tính">-->
+<!--<p id="resuilt"></p>-->
+<!--<script>-->
+<!--    function acregeRectangle() {-->
+<!--        let a = parseFloat(document.getElementById("a").value);-->
+<!--        let b= parseFloat(document.getElementById("b").value);-->
+<!--        let acregeRetangle = a * b;-->
+<!--        document.getElementById("resuilt").innerText = "Diện tích hình chữ nhật là :" + acregeRetangle;-->
+<!--    }-->
+<!--</script>-->
+<!--////BT5-->
+<!--<h2>Tính diện tích tam giác vuông</h2>-->
+<!--<script>-->
+<!--    let a=prompt("Nhập vào cạnh a");-->
+<!--    let b=prompt("Nhập vào cạnh b");-->
+<!--    let acregeTriangle = a*b/2-->
+<!--    alert("Diện tích tam giác vuông là :" +acregeTriangle);-->
+<!--</script>-->
+
+<!--///////BT6 Giải phương trình bậc 1 :ax+b=0-->
+<!--<h2>Giải Phương trình bậc 1</h2>-->
+<!--Nhập vào số a <input id="a"type="text"><br><br>-->
+<!--Nhập vào số b <input id="b" type="text"><br><br>-->
+<!--<input type="button" value="Resuilt" onclick="giaiPt()">-->
+<!--<p id="resuilt"></p>-->
+<!--<script>-->
+<!--    function giaiPt() {-->
+
+<!--        let a =parseFloat(document.getElementById("a").value);-->
+<!--        let b =parseFloat(document.getElementById("b").value);-->
+<!--        if(a === 0 && b!==0){-->
+<!--            document.getElementById("resuilt").innerText="Phương trình vô nghiệm";-->
+<!--        } else if(b===0){-->
+<!--            document.getElementById("resuilt").innerText="Phương trình vô số nghiệm";-->
+<!--        } else{-->
+<!--            let x =-b/a;-->
+<!--        document.getElementById("resuilt").innerText="Phương trình có nghiệm là :" + x ;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--///////BT7 Giải PT bậc 2 một ẩn-->
+<!--<h2>Giải Phương Trình bậc 2 ax2 + bx + c = 0 (a#0)</h2>-->
+<!--Nhập vào số a <input id="a" type="text"><br>-->
+<!--Nhập vào số b <input id="b" type="text"><br>-->
+<!--Nhập vào số c <input id="c" type="text"><br>-->
+<!--<input type="button"onclick="giaiptBac2()" value="Resuilt">-->
+<!--<p id="resuilt"></p>-->
+<!--<script>-->
+<!--    function giaiptBac2() {-->
+<!--             let a= parseFloat(document.getElementById("a"));-->
+<!--             let b= parseFloat(document.getElementById("b"));-->
+<!--             let c= parseFloat(document.getElementById("c"));-->
+<!--             let delta = b*b - 4*a*c;-->
+<!--             if (delta > 0){-->
+<!--                 let x1=(-b- Math.sqrt(delta))/2*a ;-->
+<!--                 let x2=(-b+ Math.sqrt(delta))/2*a ;-->
+<!--                 document.getElementById("resuilt").innerText= "Phương trình có 2 nghiệm " + x1 + "và "+ x2;-->
+<!--             }else if(delta===0){-->
+<!--                 document.getElementById("resuilt").innerText=" Phương trình có nghiệm kép x1 =x2 " + x1;-->
+<!--             }else{-->
+<!--                 document.getElementById("resuilt").innerText = "Phương trình vô nghiệm "-->
+<!--             }-->
+<!--             }-->
+<!--// </script>-->
+<!--////BT8-->
+<!--<script>-->
+<!--    let a = parseInt(prompt("Nhập vào số tuổi"));-->
+<!--    if(a > 120 ){-->
+<!--        alert("Nhập sai");-->
+<!--    }else if(a < 0) {-->
+<!--        alert("Nhập sai");-->
+<!--    }else {-->
+<!--        alert("Số tuổi là :" + a);-->
+<!--    }-->
+<!--</script>-->
+<!--/////BT9 kiểm tra abc có phải 3 cạnh của một tam giác không-->
+<!--<h2>kiểm tra abc có phải 3 cạnh của một tam giác không</h2>-->
+<!--Nhập cạnh a <input type="text" id ="a"><br>-->
+<!--Nhập cạnh b <input type="text" id ="b"><br>-->
+<!--Nhập cạnh c <input type="text" id ="c"><br>-->
+<!--<input type="button"value="Resuilt" onclick="kiemTra3canhtamgiac()">-->
+<!--<p id="resuilt"></p>-->
+<!--<script>-->
+<!--    function kiemTra3canhtamgiac() {-->
+<!--             let a= parseFloat(document.getElementById("a").value);-->
+<!--             let b= parseFloat(document.getElementById("b").value);-->
+<!--             let c= parseFloat(document.getElementById("c").value);-->
+<!--             let ab= a+b;-->
+<!--             let bc=b+c;-->
+<!--             let ac=a+c;-->
+<!--            if( a>0 && b>0 && c>0 && ab>c && bc>a && ac>b){-->
+<!--                document.getElementById("resuilt").innerText = " là ba cạnh của tam giác";-->
+<!--            }else{-->
+<!--                document.getElementById("resuilt").innerText = "không phải 3 cạnh của tam giác ";-->
+<!--            }-->
+<!--    }-->
+<!--// </script>-->
+
+<!--////BT 10-->
+<!--<script>-->
+<!--    let a = parseInt(prompt("Nhập vào số điện tiêu thụ"));-->
+<!--     let soTien = a * 2600;-->
+<!--     alert("số tiền điện phải trả là" + soTien);-->
+<!--// </script>-->
+<!--///BT11-->
+<!--<script>-->
+<!--    let luong =parseFloat( prompt("Nhập vào số tiền lương hàng tháng :")) ;-->
+<!--    let tncn = luong*10/100;-->
+<!--    if (luong>10000000){-->
+<!--        alert("số tiền thuế tncn phải đóng :" +tncn);-->
+<!--    }else {-->
+<!--        alert("không cần đóng thuế tncn");-->
+<!--    }-->
+<!--</script>-->
+<!--////BT 12 tính lãi ngân hàng-->
+
+Nhập số tiền gửi(VND) <input id="gui" type="text">
+Nhập kỳ hạn <select id="kyhan">
+    <option value="1thang">1 tháng</option>
+    <option value="3thang">3 tháng</option>
+    <option value="6thang">6 tháng</option>
+</select><br><br>
+<input type="button" value="Resuilt" onclick="tinhLai()"/>
+<p id="resuilt"></p>
+<script>
+    function tinhLai() {
+        let tiengui = parseFloat(document.getElementById("gui").value);
+        let kyhan = document.getElementById("kyhan").value;
+        let laisuat = 0 ;
+       switch (kyhan) {
+            case "1thang" :
+                 laisuat = tiengui*0.5/100;
+                document.getElementById("resuilt").innerText ="lai suat là :"+  laisuat+ "/1 tháng";
+                 break;
+            case "3thang" :
+                 laisuat = tiengui*3/100;
+             document.getElementById("resuilt").innerText ="lai suat là :"+  laisuat+ "/3 tháng";
+                    break;
+             default :
+             case "6thang" :
+                 laisuat = tiengui*6.8/100;
+                 document.getElementById("resuilt").innerText ="lai suat là :"+  laisuat+ "/6 tháng";
+       }
+    }
+</script>
+
+</body>
+</html>

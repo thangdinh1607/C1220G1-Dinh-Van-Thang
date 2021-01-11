@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập ứng dụng cấu trúc điều kiện</title>
+</head>
+<body>
+
+<!--/////BT1-->
+<!--<h2>Nhập vào 2 số a và b kiểm tra xem a có chia hết cho b không ?</h2>-->
+<!--Số a<input type="text" id="a" ><br>-->
+<!--Số b<input type="text " id="b"><br><br>-->
+<!--<button onclick="resuilt1()">Resuilt</button>-->
+<!--<script>-->
+<!--    function resuilt1() {-->
+<!--        a= parseInt(  document.getElementById("a").value) ;-->
+<!--        b= parseInt(document.getElementById("b").value) ;-->
+<!--        let division = a % b ;-->
+<!--        if (division == 0){-->
+<!--            document.write("a chia hết cho b");-->
+<!--        } else{-->
+<!--            document.write("a không chia hết cho b");-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+<!--/////BT2-->
+<!--<p>Nhập vào số tuổi</p>-->
+<!--<input type="text" id="age">-->
+<!--<input type="button" value="Resuilt" onclick="resuilt()">-->
+<!--<script>-->
+<!--    function resuilt() {-->
+<!--        let age = parseInt( document.getElementById("age").value);-->
+<!--            if (age >=15){-->
+<!--                document.write(age +" tuổi đủ tuổi học lớp 10");-->
+<!--            } else {-->
+<!--                document.write(age +" tuổi không đủ tuổi học lớp 10");-->
+<!--            }-->
+<!--    }-->
+<!--// </script>-->
+<!--////BT3-->
+
+<!--<script>-->
+<!--        let a = prompt("Nhập vào số nguyên :");-->
+<!--        if(a >0){-->
+<!--            alert(a +">0");-->
+<!--        }else if ( a < 0) {-->
+<!--            alert(a +" <0 ");-->
+<!--        }else {-->
+<!--            alert(a + " =0");-->
+<!--        }-->
+<!--</script>-->
+<!--/////BT4-->
+<!--<script>-->
+<!--    let a = prompt("nhập vào số a");-->
+<!--    let b =prompt("nhập vào số b");-->
+<!--    let c = prompt("nhập vào số c");-->
+<!--    if (a>b && a>c){-->
+<!--        alert(a+" là số lớn nhất");-->
+<!--    }else if (b>a && b>c){-->
+<!--        alert(b+" là số lớn nhất");-->
+<!--    }else {-->
+<!--        alert(c+" là số lớn nhất");-->
+<!--    }-->
+<!--</script>-->
+<!--////BT 5-->
+<!--Nhập điểm KT <input id="kt"type="text"><br><br>-->
+<!--Nhập điểm KT giữa kì <input id="ktgk" type="text"><br><br>-->
+<!--Nhập điểm kt cuối kì <input id="ktck" type="text"><br><br>-->
+<!--<input type="button" value="Resuilt" onclick="resuilt()"/><br><br>-->
+
+<!--Học lực là :<p id="resuilt"></p>-->
+<!--    <script>-->
+<!--        function resuilt() {-->
+<!--            let a= parseFloat(document.getElementById("kt").value);-->
+<!--            let b= parseFloat(document.getElementById("ktgk").value);-->
+<!--            let c= parseFloat(document.getElementById("ktck").value);-->
+<!--            let average = (a + b*2 +c*3)/6 ;-->
+<!--            if (average >= 8){-->
+<!--                document.getElementById("resuilt").innerText="Giỏi";-->
+<!--            } else if(average >=6.5){-->
+<!--                document.getElementById("resuilt").innerText="KHá";-->
+<!--            } else {-->
+<!--                document.getElementById("resuilt").innerText= "TB";-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+<!--///BT6 Tính hoa hồng nhận được tùy theo mức doanh số bán hàng-->
+<!--Nhập vào doanh thu<input id="st"type="text"><br><br><br>-->
+<!--<input type="button" value="Tính số Hoa hồng" onclick="tinhToan()"><br><br>-->
+<!--Số tiền hoa hồng <p id="hh"></p>-->
+<!--<script>-->
+<!--    function tinhToan() {-->
+<!--        let a = parseInt( document.getElementById("st").value);-->
+<!--        let comMission = a*5/100;-->
+<!--        document.getElementById("hh").innerText= comMission ;-->
+<!--    }-->
+
+
+<!--// </script>-->
+<!--////BT7 Tính cước điện thoại cho một hộ gia đình với các thông số đã cho-->
+<h2>Tính cước điện thoại</h2>
+Số phút gọi(phút) <input id="sophut"type="text">
+<input type="button" value="Resuilt" onclick="tinhCuocdt()">
+<p id="sotien" ></p>
+<script>
+    function tinhCuocdt() {
+        let a =parseFloat( document.getElementById("sophut").value);
+        let cuoc = a*900;
+        document.getElementById("sotien").innerText="Số tiền cước điện thoại: " + cuoc +" NVD"
+    }
+</script>
+</body>
+</html>

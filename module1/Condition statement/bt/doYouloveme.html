@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOYouloveme</title>
+</head>
+<body>
+<h2>Do u love me ?</h2>
+<button onclick="eclick()">YES</button>
+<button id="nono"type="button" onmouseover="noover()" style="position: absolute">NO</button>
+<script>
+    function eclick() {
+        alert("OKkkkkkkkkkk");
+    }
+    function noover() {
+        /// math.random chỉ random number trong đoạn [0;1]*kích thước ô trình duyệt
+        let x = Math.random()*window.innerHeight;
+        let y = Math.random()*window.innerWidth;
+     document.getElementById("nono").style.left =x+"px" ;
+     document.getElementById("nono").style.top=y +"px";
+    }
+
+</script>
+</body>
+</html>
