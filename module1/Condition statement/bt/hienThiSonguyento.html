@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên tố</title>
+</head>
+<body>
+<script>
+////in ra 20 so nguyeen
+    // let n=0;
+    // let i=2;
+    // let j;
+    //     while (true){
+    //         for(j=2;j<i;j++){
+    //             if(i%j===0){
+    //                 break;
+    //             }
+    //         }
+    //         if (j === i) {
+    //             j=j+" ; ";
+    //             document.write(j);
+    //             n++;
+    //             if (n === 20) {
+    //                 break;
+    //             }
+    //         }
+    //         i++;
+    //     }
+//////in ra so luong so nguyen
+    let number = parseInt(prompt("nhap so luong so nguyen to :"));
+    let count = 0;
+    let i = 2;
+    let j =2;
+    let check;
+    while (count < number) {
+        check = true;
+        for (j ; j < i; j++) {
+            if (i % j === 0) {
+                check = false;
+                break;
+            }
+        }
+        if (check){
+            document.write(i + ";");
+            count++;
+        }
+        i++;
+    }
+
+</script>
+</body>
+</html>

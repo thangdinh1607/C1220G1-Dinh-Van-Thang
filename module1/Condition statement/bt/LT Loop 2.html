@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập loop 2</title>
+</head>
+<body>
+<script>
+    /////bài 1 in dãy fibonaci
+    // let x1=0;
+    // let x2=1;
+    // let xn =1;
+    // let count=0;
+    // do{
+    //     x1=x2;
+    //     x2=xn;
+    //     xn=x1+x2;
+    //     count++;
+    //     document.write(xn + "  ;     ");
+    // }while (count<20);
+///bài 2 Giai thừa của một số nguyên dương
+//     let a =parseInt(prompt("Nhập 1 số nguyên dương :"));
+//     let n;
+//     let giaiThua=1;
+//         for (n = 1; n <= a; n++) {
+//             giaiThua = giaiThua * n;
+//         }
+//         document.write("Giai thừa của " + a + " là   " + giaiThua);
+////Bài tập 3
+//     let n = 6;
+//     let j;
+//     let i;
+//     for(i=0;i<n;i++) {
+//         for (j = 0; j < i; j++) {
+//             document.writeln("  *  ")
+//         }
+//         document.write("<br>")
+//         }
+
+
+
+///BT 4 vẽ hình chữ nhật
+    let i =1 , j=1 ;
+    let a =5 ; b=10;
+
+    for(i=1;i<=a;i++) {
+        for (j = 1; j <= b; j++) {
+            if(i===1 || i===5 || j===1 ||j===10){
+                document.write(" 1 ");
+            }else  {
+                document.write(" 0 ");
+            }
+            }
+            document.write("<br>");
+        }
+</script>
+</body>
+</html>
