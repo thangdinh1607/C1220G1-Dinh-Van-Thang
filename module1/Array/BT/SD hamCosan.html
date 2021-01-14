@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+<script>
+    ///BT1
+    // let myColor = [" Red" , "Green", "White", "Black"];
+    // document.write(myColor.join("-"));
+    //BT2
+    // let i ;
+    // let number=parseInt(prompt("Nhập vào 1 số"));
+    // let str = number.toString();
+    // let result=0;
+    //     for(i=0 ;i<str.length;i++){
+    //         if(str[i]%2===0 && str[i+1]%2===0){
+    //             result= result +str[i] + "-";
+    //         }else
+    //             result=result + str[i];
+    // }
+    //     document.write(result);
+///BT3
+        let a = prompt("Nhập vào 1 chuỗi chữ");
+        let str=a.toString();
+        let i;
+        let UPPER ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let result="";
+        for(i=0;i<a.length;i++){
+            if(UPPER.includes(str[i])){
+                result = result + str[i].toLowerCase();
+                }else {
+                result = result + str[i].toUpperCase();
+            }
+            }
+                document.write(result);
+
+</script>
+</body>
+</html>

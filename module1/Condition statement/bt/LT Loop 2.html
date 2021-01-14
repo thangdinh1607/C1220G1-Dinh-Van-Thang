@@ -26,7 +26,8 @@
 //             giaiThua = giaiThua * n;
 //         }
 //         document.write("Giai thừa của " + a + " là   " + giaiThua);
-////Bài tập 3
+//Bài tập 3
+//     3.1
 //     let n = 6;
 //     let j;
 //     let i;
@@ -36,23 +37,61 @@
 //         }
 //         document.write("<br>")
 //         }
-
-
+//         3.2 CHƯA LÀM ĐƯỢC
+//             let n =parseInt(prompt("nhap do dai canh tam giac vuong"));
+//         let i,j;
+//
+//         for(i=0;i<n;i++){
+//             for(j=0;j<n;j++){
+//                 document.write(" 1 ");
+//             }
+//                     document.write("<br>");
+//         }
 
 ///BT 4 vẽ hình chữ nhật
-    let i =1 , j=1 ;
-    let a =5 ; b=10;
-
-    for(i=1;i<=a;i++) {
-        for (j = 1; j <= b; j++) {
-            if(i===1 || i===5 || j===1 ||j===10){
-                document.write(" 1 ");
-            }else  {
-                document.write(" 0 ");
-            }
-            }
-            document.write("<br>");
+//     let i =1 , j=1 ;
+//     let a =5 ; b=10;
+//
+//     for(i=1;i<=a;i++) {
+//         for (j = 1; j <= b; j++) {
+//             if(i===1 || i===5 || j===1 ||j===10){
+//                 document.write(" 1 ");
+//             }else  {
+//                 document.write(" 0 ");
+//             }
+//             }
+//             document.write("<br>");
+//         }
+    ////bt5 tính lãi ngân hàng
+    //lãi 3.1%/tháng
+    let i =1;
+    let money=parseFloat(prompt("Nhập vào số tiền ban đầu"));
+    let month=parseFloat(prompt("nhập vào số tháng cho vay"));
+    let lai = 0;
+    do{
+        switch (month) {
+            case 1 :
+            case 2 :
+            case 3 :
+                lai=3.1;
+                break;
+            case 4 :
+            case 5 :
+            case 6 :
+                lai=4;
+                break;
+            case 7 :
+            case 8 :
+            case 9:
+                lai=5.6;
+                break;
+                default:
+                 lai=6;
         }
+        money=money+money*(lai/100);
+        i++
+    }while (i<=month);
+    alert("tiền gốc và lãi sau khi gửi "+ month +" tháng là" +money);
 </script>
 </body>
 </html>
