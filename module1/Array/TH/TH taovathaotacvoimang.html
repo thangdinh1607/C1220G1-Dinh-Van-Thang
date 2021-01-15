@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+<h2>Sample Screen</h2>
+
+<input id="nhap" type="text" >
+<input type="button" value="Add" onclick="add()">
+<input  id="dislay" type = "button" value="Dislay" onclick="dislay()">
+<p id="resuilt"></p>
+
+<script>
+    let array1=[];
+    function add(){
+        let a = document.getElementById("nhap").value;
+        array1.push(a)
+        document.getElementById("nhap").value =""; //giá trị gán ngược lại bằng ""
+    }
+    function dislay() {
+        let e = "";
+        for(i=array1.length -1;i>=0;i--)
+            e = "Element"+i+ "="+array1[i] + "<br>" + e;
+            document.getElementById("resuilt").innerHTML = e ;
+    }
+</script>
+</body>
+</html>

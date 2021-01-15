@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionnary</title>
+</head>
+<body>
+<h2>Dictionnary</h2>
+<input id="el" type="text"><br><br>
+<input type="button" value="Translate" onclick="dich()">
+<p id="resuilt1">kq</p>
+<script>
+    let engLish =["one","two","three","four"];
+    let vietNamese =["một","hai","ba","bốn"];
+    function dich() {
+        let a = document.getElementById("el").value;
+        for(let i=0;i<engLish.length;i++){
+            if(engLish[i]===a){
+                document.getElementById("resuilt1").innerText = vietNamese[i];
+                break;
+            }else
+                document.getElementById("resuilt1").innerText = "không tìm thấy";
+        }
+    }
+</script>
+</body>
+</html>
