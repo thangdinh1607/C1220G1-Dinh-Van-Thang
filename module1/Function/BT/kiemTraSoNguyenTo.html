@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    let check;
+    let a = parseInt(prompt("nhập vào 1 số "));
+    function ktsnt(number) {
+        for (let i = 2;i<number; i++) {
+            if (number%i === 0) {
+                check = true;
+            }
+        }
+        if (check === true) {
+            document.write(number + " không phải là số nguyên tố");
+        } else
+            document.write(number +" là số nguyên tố");
+    }
+    ktsnt(a);
+</script>
+</body>
+</html>

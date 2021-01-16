@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="Nhập vào 1 số" onchange="congthem1()">
+<p id="result"></p>
+<script>
+    alert("Xin Chào");
+    let a;
+    function congthem1() {
+         a = parseFloat(document.getElementById("a").value);
+         a++;
+         document.getElementById("result").innerText = a ;
+    }
+</script>
+</body>
+</html>

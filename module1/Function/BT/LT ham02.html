@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tâp tạo và sử dụng hàm 02</title>
+</head>
+<body>
+<script>
+//BT1
+    // let a = parseFloat(prompt("nhập vào"));
+    // let kq;
+    // function binhPhuong(aa) {
+    //     kq=aa*aa;
+    //     document.write(kq);
+    // }
+    // binhPhuong(a);
+/////BT2
+//  let r = parseFloat(prompt("Nhập vào bán kính hình tròn:"));
+//  let pri ,acrea ;
+//         function primeter() {
+//           pri = 2*r*3.14;
+//           document.write( "Primeter :" +pri +"<br>");
+//         }
+//         function acreage() {
+//             acrea=r*r*3.14;
+//             document.write("Acreage"+ acrea);
+//         }
+//         primeter(r);
+//         acreage(r);
+    ////BT3
+    //         let fac=1;
+    //         let b = parseInt(prompt("nhập vào số nguyên b"));
+    //         let a = parseInt(prompt("nhập vào số nguyên a"));
+    //     function factorial(r) {
+    //         for(let i=1 ; i <=r;i++){
+    //             fac = i*fac;
+    //         }
+    //         document.write(fac);
+    //     }
+    // factorial(b);
+    ////BT5
+    //         let a = parseInt(prompt("nhập vào số nguyên a"));
+    //         let b = parseInt(prompt("nhập vào số nguyên b"));
+    //         let c = parseInt(prompt("nhập vào số nguyên c"));
+    //         function compare() {
+    //             if(a>b && a>c){
+    //                 alert("số lớn nhất là :" +a);
+    //             }else if(b>a && b>c){
+    //                 alert("số lớn nhất là :" +b);
+    //             }else
+    //                 alert("số lớn nhất là :" +c);
+    //         }
+    //         compare();
+    ////BT6
+    // let a = parseInt(prompt("nhập vào 1 số :"));
+    // function ktso() {
+    //         if (a>=0){
+    //            alert(true);
+    //         }else{
+    //         alert(false);
+    //         }
+    // }
+    // ktso(a);
+    ///BT7
+    //     let array = [];
+    //         function doiCho() {
+    //             let a = parseInt(prompt("Nhập vào số a"));
+    //             let b = parseInt(prompt("Nhập vào số b"));
+    //             array.push(a);
+    //             array.push(b);
+    //             array.splice(2, 0, a);
+    //             array.splice(0, 1);
+    //             // let c =alert(array);
+    //             for (let element of array) {
+    //                 document.write(element + " ");
+    //             }
+    //         }
+    //
+    //         doiCho();
+    //BT8
+            let array=[1,2,3];
+            function truyen(a,b,c) {
+                // let a = parseInt(prompt("Nhập vào số a"));
+                array.push(a);
+                // let b = parseInt(prompt("Nhập vào số b"));
+                array.push(b);
+                // let c = parseInt(prompt("Nhập vào số c"));
+                array.push(c);
+                array.reverse();
+                for(let element of array){
+                    document.write(element + "  ");
+                }
+            }
+            truyen(4,5,6);
+
+    ///BT9
+
+</script>
+</body>
+</html>

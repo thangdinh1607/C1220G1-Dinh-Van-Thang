@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5</title>
+</head>
+<body>
+<p id ="result"></p>
+<script>
+        let array1 = ["Polaris","Aldebaran","Dened","Vega","Dubhe","Regulus"];
+        let array2 = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+        let a = prompt("nhập :");
+        function seach() {
+            for(let i=0;i<array1.length;i++){
+                if(a===array1[i]){
+                    document.getElementById("result").innerText = array1[i] + "----" +array2[i];
+                    break;
+                }else {
+                    document.getElementById("result").innerText = " không tìm thấy";
+                }
+            }
+        }
+        seach(a);
+
+
+</script>
+</body>
+</html>

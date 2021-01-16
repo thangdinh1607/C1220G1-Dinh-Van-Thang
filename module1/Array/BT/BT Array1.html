@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01</title>
+</head>
+<body>
+<script>
+    ///BT1
+    // let array =[];
+    // let result=0;
+    // let count = 0;
+    // let i;
+    // for(count=0;count<10;count++){
+    // let a =parseInt(prompt("Nhập số nguyên dương"));
+    // array.push(a);
+    // }
+    // for(i=0;i<array.length;i++){
+    //     if(array[i] >=10){
+    //         result = result + array[i] + " ";
+    //     }
+    // }
+    // document.write("số >=10 là :"+ result);
+    ///BT2
+    let array1=[];
+    let max= -Infinity;
+            for (let i=0;i<3;i++) {
+                let number = parseInt(prompt("nhập vào số nguyên dương"));
+                array1.push(number);
+            }
+            let i;
+            for(i= 0 ; i<=array1.length;i++){
+                if (array1[i] > max) {
+                    max = array1[i];
+                }
+            }
+    document.write("giá trị lớn nhất là " + max + "tại vị trí " +i);
+
+
+</script>
+</body>
+</html>

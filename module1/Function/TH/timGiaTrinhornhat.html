@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+    let array1=[4,9,3,6,4,5,7,8,5,6,7];
+    let array2=[2,3,4];
+    let array3=[555223,666323,44422,777,56456
+        ,456456,34242,76575,12312];
+    let array4=[];
+
+    function minnumber(arr) {
+        if(arr.length===0){
+            return -1
+        }
+        let min =arr[0];
+        for(let i=0;i<arr.length;i++){
+            if(min>arr[i]){
+                min=arr[i];
+            }
+        }
+            return min;
+    }
+    let min1 = minnumber(array3);
+    document.write(min1);
+</script>
+</body>
+</html>
