@@ -78,22 +78,40 @@
     //
     //         doiCho();
     //BT8
-            let array=[1,2,3];
-            function truyen(a,b,c) {
-                // let a = parseInt(prompt("Nhập vào số a"));
-                array.push(a);
-                // let b = parseInt(prompt("Nhập vào số b"));
-                array.push(b);
-                // let c = parseInt(prompt("Nhập vào số c"));
-                array.push(c);
-                array.reverse();
-                for(let element of array){
-                    document.write(element + "  ");
-                }
-            }
-            truyen(4,5,6);
+    //         let array=[1,2,3];
+    //         function truyen(a,b,c) {
+    //             // let a = parseInt(prompt("Nhập vào số a"));
+    //             array.push(a);
+    //             // let b = parseInt(prompt("Nhập vào số b"));
+    //             array.push(b);
+    //             // let c = parseInt(prompt("Nhập vào số c"));
+    //             array.push(c);
+    //             array.reverse();
+    //             for(let element of array){
+    //                 document.write(element + "  ");
+    //             }
+    //         }
+    //         truyen(4,5,6);
 
-    ///BT9
+    ///BT9 Truyền vào 1 mảng ký tự và 1 số bất kỳ
+    let array=["A","b","?",1,"2","%","b"];
+    function ktkt() {
+        let a = prompt("nhập vào 1 ký tự bất kỳ :");
+        let count =0 ;
+        for (let i=0;i<array.length;i++){
+            if(a==array[i]){
+                count++;
+            }
+        }
+        if(count>0){
+        document.write(count);
+        }else {
+            document.write(-1);
+        }
+
+    }
+    ktkt();
+
 
 </script>
 </body>

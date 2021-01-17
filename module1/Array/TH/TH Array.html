@@ -17,13 +17,23 @@
 
     let b = parseInt(prompt("nhập"));
     let a = [1,2,3,4,5];
-    for(let i=0;i<a.length;i++){
-        if(a[i] === b){
-            document.write("số này có trong mảng b ở vị trí" + i);
-            break;
+    let i;
+    let check = true;
+    for(i=0;i<a.length;i++) {
+        if (a[i] === b) {
+            check= false;
+            document.write("có nằm trong mảng tại index= " + i);
         }
-        document.write("không tìm thấy");
-    }
+        }
+    if(check){
+        document.write(-1);
+        }
+
+
+
+
+
+
 //bt3
 
 

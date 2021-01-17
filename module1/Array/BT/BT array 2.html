@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT Array2</title>
+</head>
+<body>
+<script>
+    ///BT1
+    // let a = [[1, 2, 1, 24],[8, 11, 9, 4],[7, 0, 7, 27],[7, 4, 28, 14],[3, 10, 26, 7]];
+    // for (let i=0;i<5;i++){
+    //     document.write("row "+i + "<br>");
+    //     for (let j=0;j<4;j++){
+    //         document.write(a[i][j] +"<br>");
+    //     }
+    // }
+    // let a = [[1, 2, 1, 24],[8, 11, 9, 4],[7, 0, 7, 27],[7, 4, 28, 14],[3, 10, 26, 7]];
+    // for( let i in a){
+    //     document.write("row"+i +"<br>" );
+    //     for (let j in a[i]){
+    //         document.write(a[i][j] +"<br>");
+    //     }
+    // }
+    ///BT2 Đảo ngược mảng 2 chiều
+    // let a = [[1, 2, 1, 24],[8, 11, 9, 4],[7, 0, 7, 27],[7, 4, 28, 14],[3, 10, 26, 7]];
+    // let b ="";
+    // for(let i=0;i<a.length;i++){
+    //      b = "<br>" + "row" + i +"<br>"+a[i].reverse() + b + "<br>"
+    // }
+    //     document.write(b);
+    ////BT3 Đếm số kí tự trong mảng
+    // let a = [[1, 2,"a","b"],[8, 11, 9, 4],[7, 0, 7, 27],[7, 4, 28, 14],[3, 10, 26, 7]];
+    // let count =0;
+    // let check = true;
+    //     for(let i=0;i<a.length;i++){
+    //         for(let j = 0;j<a[i].length;j++) {
+    //             if(isNaN(a[i][j])){
+    //                 check= false;
+    //             }else {
+    //                 check=true;
+    //                 count ++;
+    //             }
+    //         }
+    //     }
+    //     if(check){
+    //         document.write("sss"+ count);
+    //     }
+/////BT4 Đếm số từ trong 1 chuỗi
+//     let a = prompt("nhập vào 1 văn bản");
+//     let count =1 ;
+//      for(let i=0;i<a.length;i++){
+//         if(a.charAt(i) ===" "){
+//             count++;
+//         }
+//      }
+//      document.write("số từ =" +count);
+///BT5
+            let a=prompt("nhập chuỗi 1");
+            let b=prompt("Nhập chuỗi 2");
+            let arraya=[];
+            let arrayb=[];
+            let check=true;
+            for (let i=0;i<a.length;i++){
+                arraya.push(a.charAt(i))
+                }
+            for (let i=0;i<b.length;i++){
+                arrayb.push((b.charAt(i)))
+            }
+            for(let i=0;i<arraya.length;i++){
+                if(arraya[i]===arrayb[i]){
+                    check= true;
+                }else {
+                    check=false;
+                }
+            }
+            if(check){
+                document.write("giống nhau");
+            }else {
+                document.write("khác nhau");
+            }
+
+
+
+///BT6
+//     let array=[];
+//     let n=parseInt(prompt("Nhập vào số lượng kí tự cần nhập"));
+//                 for(let i=0;i<n;i++){
+//                 let a = prompt("nhập các kí tự");
+//                 array.push(a);
+//                     if(array[i].charAt(i)=="-"){
+//                         array.splice(i,1,"_");
+//                 }
+//                 }
+//                     document.write("in ra chuỗi :" + array+"  " );
+</script>
+</body>
+</html>
