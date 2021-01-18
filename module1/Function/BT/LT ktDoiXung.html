@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra đối xứng</title>
+</head>
+<body>
+<script>
+    let a= prompt("Nhập vào 1 chuỗi");
+    function ktdx(str) {
+        if (0 >=(str.length - 1)) {
+            return true;
+        } else if (str.charAt(0) === str.charAt(str.length - 1)) {
+            str = str.substring(1, str.length - 1);
+            //str.substring : nội dung trích xuất sẽ kéo dài từ start đến end không bao gồm end
+            return ktdx(str);
+        } else {
+            return false;
+        }
+        }
+        alert(ktdx(a));
+</script>
+</body>
+</html>

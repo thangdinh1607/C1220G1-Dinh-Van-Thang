@@ -7,13 +7,53 @@
 <body>
 <h2>Quản lý sản phẩm</h2>
 <p>Add new Product</p>
-<input type="text"><button>Edit</button><button>Delete</button>
+<input type="text" placeholder="New Product" id ="product"><button onclick="addProduct()">ADD</button>
+<p id="disPlay"></p>
 
 <script>
-    let array = ["sony","samsung"];
-
-
-
+    let listProduct = [];
+    function disPlay(){
+    let strTable = '<table border="1">\n' +
+        '    <tr>\n' +
+        '        <th>STT</th>\n' +
+        '        <th>Name</th>\n' +
+        '        <th>Edit</th>\n' +
+        '        <th>Delete</th>\n' +
+        '    </tr>';
+    for (let i=0;i<listProduct.length;i++){
+        strTable = strTable + '    <tr>\n' +
+            '        <td>'+(i+1)+'</td>\n' +
+            '        <td>'+listProduct[i]+ '</td>\n' +
+            '        <td><button onclick="edit('+i+')">Edit</button></td>\n' +
+            '        <td><button onclick="delete1('+i+')">Delete</button></td>\n' +
+            '    </tr>';
+        }
+            strTable = strTable + "</table>";
+            document.getElementById("disPlay").innerHTML = strTable;
+        }
+            function addProduct() {
+        let product = document.getElementById("product").value;
+        if(product.length<=0){
+            alert("Input Name");
+        } else{
+        listProduct.push(product);
+        document.getElementById("product").value="";
+        disPlay();
+            }
+        }
+        function edit(id) {
+            let newName = prompt("Nhập tên mới");
+            if(newName.length>=0){
+                listProduct[id] = newName ;
+            }else{
+                alert("Nhập tên cần sửa");
+            }
+            disPlay();
+        }
+        function delete1(he) {
+            listProduct.splice(he,1);
+            disPlay();
+        }
 
 </script>
 </body>
