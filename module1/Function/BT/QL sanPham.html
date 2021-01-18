@@ -7,23 +7,11 @@
 <body>
 <h2>Quản lý sản phẩm</h2>
 <p>Add new Product</p>
-<input type="text" placeholder="New Product" id ="add"> <input type="button" value="Add" onclick="add()">
-<p>Dislay All Product</p>
-<p>---Product Name---</p>
-
-<div id="1" value="     ">     </div><input type="button" value="Edit" onclick="edit()">
-<input type="button" value="Delete"><br>
-<input id="2"type="text" disabled><input type="button" value="Edit" onclick="edit()">
-<input type="button" value="Delete"><br>
+<input type="text"><button>Edit</button><button>Delete</button>
 
 <script>
     let array = ["sony","samsung"];
-    let a;
-        function add() {
-                a =document.getElementById("add").value;
-                array.push(a);
-        }
-        document.write("ss" +array);
+
 
 
 

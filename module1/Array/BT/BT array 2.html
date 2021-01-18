@@ -67,10 +67,9 @@
                 arrayb.push((b.charAt(i)))
             }
             for(let i=0;i<arraya.length;i++){
-                if(arraya[i]===arrayb[i]){
-                    check= true;
-                }else {
+                if(arraya[i]!==arrayb[i] && arrayb.length===arraya.length){
                     check=false;
+                    break;
                 }
             }
             if(check){
