@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor(khoiluong) {
+        this.weight = khoiluong;
+        }
+    }
+    class Human{
+        constructor(ten,gioitinh,cannang){
+            this.name=ten;
+            this.sex=gioitinh;
+            this.weight=cannang;
+        }
+        say(){
+            console.log("hehe");
+        }
+        eatApple(apple){
+            if(apple.weight>0){
+                apple.weight --;
+                this.weight ++;
+                this.say();
+            }
+        }
+    }
+    let male =new Human("thang","nam",60);
+    let female = new Human("abc","nu",40);
+    let apple = new Apple(10);
+    male.eatApple(apple);
+    male.eatApple(apple);
+    male.eatApple(apple);
+    female.eatApple(apple);
+    female.eatApple(apple);
+    female.eatApple(apple);
+    console.log("cân nặng male" + male.weight);
+    console.log("cân nặng femail " + female.weight);
+</script>
+</body>
+</html>
