@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH Canvas</title>
+</head>
+<body>
+<canvas width="2000" height="1000" id="cv" style="border:1px"></canvas>
+<script>
+   let l=document.getElementById("cv");
+   let l1=l.getContext("2d");
+   l1.moveTo(0,0);
+   l1.lineTo(200,800);
+   l1.stroke();
+
+   l1.beginPath();
+   l1.arc(200,500,50,0,2*Math.PI);
+   l1.stroke();
+
+   l1.font=("50px Arial");
+   l1.fillText("thangdinh1992",100,100);
+
+    let l2 = l1.createLinearGradient(100,200,200,100);
+   // (x1,y1) (x2,y2)
+   l2.addColorStop(0,"green");
+   l2.addColorStop(1,"blue");
+   l1.fillStyle=l2;
+   l1.fillRect(200,100,300,700);
+
+
+   let grd= l1.createRadialGradient(75,50,5,90,60,100);
+   grd.addColorStop(0,"red");
+   grd.addColorStop(1,"Black");
+   l1.fillStyle = grd;
+   l1.fillRect(10,10,150,80);
+</script>
+</body>
+</html>

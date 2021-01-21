@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlasLamp</title>
+</head>
+<body>
+<script>
+    class lamp {
+        constructor(pin,trangthai) {
+            this.battery = pin;
+            this.status = trangthai;
+        }
+        turnON(pin){
+            if (pin.battery>0){
+                if(this.status !=="bat"){
+                    this.status="bat";
+                    alert(this.status+ "pin" + pin.battery)
+                }else{
+                    alert("đèn Đang bật rồi")
+                }
+            }else{
+                alert("hết pin"+ pin.battery)
+            }
+        }
+        turnOff(pin){
+            if(pin.battery > 0){
+                if(this.status==="bat") {
+                    this.status="tat";
+                    alert("Đã tắt")
+                }else {
+                    alert("Đang tắt")
+                }
+            }else{
+                alert("hết pin" )
+            }
+        }
+    }
+    class pin{
+        constructor(pin) {
+            this.battery = pin;
+        }
+    }
+    let pin1 = new pin(20);
+    let lamp1 = new lamp(0,"bat");
+    let lamp2 = new lamp(0,"tat");
+    // lamp1.turnON(pin1);
+    // lamp1.turnON(pin1);
+    lamp2.turnOff(pin1);
+
+</script>
+</body>
+</html>

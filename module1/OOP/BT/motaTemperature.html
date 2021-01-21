@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Temperature</title>
+</head>
+<body>
+<h2>Chuyển đổi nhiệt độ</h2>
+<input type="text" id="nhietdo">
+<input type="button" onclick="cover()" value="Cover" onblur="clear()" ><br>
+<p id ="cover"></p>
+<script>
+    class Temperature {
+        constructor(nhietdoc) {
+            this.c = nhietdoc;
+        }
+         getDoC(){
+            return this.c;
+         }
+         getNhietdoF(){
+            return (this.c*1.8)+32;
+         }
+         getNhietdoK(){
+            return this.c -273.15;
+         }
+         setDoc(nhietdo){
+            this.c=nhietdo;
+         }
+    }
+
+    let c = new Temperature(25);
+        function cover() {
+            let c1 = parseFloat(document.getElementById("nhietdo").value);
+            if (c1 > -273) {
+                c.setDoc(c1);
+                document.getElementById("cover").innerHTML = "Nhiệt độ C thay đổi là" + c.getDoC() +
+                    "<br>" + "Nhiệt độ F là " + c.getNhietdoF() + "<br>"
+                    + "Nhiệt độ K là :" + c.getNhietdoK();
+            } else {
+                alert("nhập lại");
+                document.getElementById("nhietdo").value = "";
+            }
+        }
+
+
+</script>
+</body>
+</html>

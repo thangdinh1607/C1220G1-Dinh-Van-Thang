@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote TV</title>
+</head>
+<body>
+<script>
+    class All {
+        constructor(kenh,amluong) {
+            this.channels=kenh;
+            this.volume=amluong;
+        }
+    }
+    class Tivi extends All {
+        constructor(kenh, amluong, trangthai) {
+            super(kenh, amluong, trangthai);
+            this.status = trangthai;
+        }
+
+        getChannels() {
+            this.channels;
+        }
+
+        getVolume() {
+            this.volume;
+        }
+
+        isStatus() {
+            if (this.status==="bat") {
+                return true;
+            } else {
+                alert("tivi đang tắt");
+                return false;
+            }
+        }
+    }
+
+
+
+    class remote extends All{
+        constructor(kenh,amluong) {
+            super(kenh,amluong);
+
+        }
+        setChannels(a){
+            this.channels = a;
+        }
+        setVolume(){
+            this.volume+=1;
+        }
+        onTivi(tivi){
+            if(tivi.status!=="bat"){
+               let a = confirm("bạn muốn bật ti vi không");
+               if(a===true){
+                   tivi.status="bat";
+                   alert("tivi Đang bật" + "đang ở kênh" +tivi.channels+ "âm lượng"+tivi.volume);
+               }else {
+                   alert("tivi đang tắt");
+               }
+            }else {
+                alert("tivi Đang bật" + "đang ở kênh" +tivi.channels+ "âm lượng"+tivi.volume );
+            }
+        }
+        moveChannels(tivi){
+            if(tivi.status ==="bat"){
+                let a = parseInt(prompt("nhập kênh "));
+                tivi.channels = a ;
+                }
+            }
+        moveVolume(tivi){
+            if (tivi.status ==="bat"){
+                let a =parseInt(prompt("nhập âm lượng cần tăng"));
+                tivi.volume += a;
+            }
+        }
+    }
+
+
+        let tivi1 = new Tivi(20,20,"tat");
+        let remote1 = new remote(20,20);
+
+        tivi1.isStatus();
+        remote1.onTivi(tivi1);
+        remote1.moveChannels(tivi1);
+        remote1.moveVolume(tivi1);
+        // alert("Kenh"+ tivi1.channels +" mức âm lượng" + tivi1.volume +" trang thai" +tivi1.status);
+</script>
+</body>
+</html>

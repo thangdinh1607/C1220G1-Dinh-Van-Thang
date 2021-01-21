@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mô phỏng chuột và mèo</title>
+</head>
+<body>
+<script>
+    class Mouse {
+                constructor(ten,khoiluong,tocdo,trangthai) {
+                        this.name=ten;
+                        this.weight=khoiluong;
+                        this.speed=tocdo;
+                        this.status = trangthai;
+        }
+        say(){
+                         console.log(this.name + "chit chit");
+        }
+        mousedie(meo1){
+                    if(this.speed<meo1.speed){
+                        this.say();
+                    }
+        }
+    }
+    class Cat{
+                constructor(ten,khoiluong,tocdo) {
+                        this.name=ten;
+                        this.weight=khoiluong;
+                        this.speed=tocdo;
+        }
+        say(){
+        console.log(this.name + "meo meo");
+        }
+        catchesMouse(mouse){
+            if(this.speed>mouse.speed && mouse.status === "song"){
+                this.say();
+                this.weight+=mouse.weight;
+            }
+            }
+        }
+    let meo = new Cat("thang",45,10);
+    let longchuot =[];
+    let chuot1 = new Mouse("jery1",5,5,"queo");
+    let chuot2 = new Mouse("jery2",5,5,"queo");
+    let chuot3 = new Mouse("jery3",5,5,"song");
+    let chuot4 = new Mouse("jery4",5,15,"song");
+    let chuot5 = new Mouse("jery5",5,5,"song");
+    longchuot.push(chuot1,chuot2,chuot3,chuot4,chuot5);
+    for(let chuot of longchuot){
+    meo.catchesMouse(chuot);
+     chuot3.mousedie(meo);
+    }
+    console.log(meo.weight);
+</script>
+</body>
+</html>

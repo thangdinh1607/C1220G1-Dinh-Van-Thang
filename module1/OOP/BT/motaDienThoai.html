@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<script>
+class Mobile{
+    constructor(name,status,pin) {
+        this.pin =pin ;
+        this.status=status;
+        this.name = name;
+        this.smsWrite=[];
+        this.smsInbox =[];
+        this.smsSend=[];
+    }
+    isStatus(){
+        if(this.status){
+            return true;
+        }else{
+            alert("điện thoại đang tắt ");
+            return false;
+        }
+    }
+    onOrOff(){
+        if(this.status){
+            this.status = false;
+        }else{
+            this.status = true;
+            this.pin --;
+        }
+    }
+    chagePin(){
+        if(this.pin <5){
+            while ((this.pin<=100){
+                this.pin+= 0.001;
+            }
+            alert("Full batery");
+        }
+    }
+    writesms(){
+        if(this.status){
+            let sms =prompt("Nhập tin nhắn");
+            this.smsWrite(sms);
+            this.pin --;
+        }
+    }
+    sendsms(Mobile){
+        if(this.status){
+            this.chagePin();
+            if(this.smsWrite.length===0){
+                this.writesms();
+                Mobile.smsInbox.push("người gửi :"+ this.name + " ----" +this.smsWrite[0]);
+                this.smsSend.push("gửi cho" + Mobile.name + " --- " + this.smsWrite[0]);
+                this.smsWrite.shift();
+            }else {
+                let temp ="";
+                for(let i=0 ;i<this.smsWrite.length;i++){
+                    temp+=i+"."+this.smsWrite[i]+"\n";
+                }
+                let index =parseInt(prompt("chọn tin nhắn muốn gửi : \n" + temp))
+            }
+        }
+    }
+
+}
+        let nokia =new Mobile("Nokia",true,5);
+        let iphone = new Mobile("iphone",true,80);
+</script>
+</body>
+</html>

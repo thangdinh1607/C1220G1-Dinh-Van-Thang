@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectagle Class</title>
+</head>
+<body>
+<canvas width="600" height="400" id="cv" style="border: 1px"></canvas><br><br><br><br>
+<input type="text" placeholder="Nhập chiều dài" id="hei"><br><br>
+<input type="text" placeholder="Nhập chiều rộng" id="wei">
+<input type="button" value="Nhập" onclick="nhap()" >
+<p id="result"></p>
+
+<script>
+    class RectagleClass{
+        constructor(chieudai,chieurong) {
+            this.height=chieudai;
+            this.width=chieurong;
+        }
+        getHeight(){
+            return this.height;
+        }
+        getWeight(){
+            return this.width;
+        }
+        getPerimeter(){
+            return (this.height+this.width)*2;
+
+        }
+        getAcreage(){
+            return this.height*this.width;
+        }
+        setHeight(chieudai){
+            this.height =chieudai;
+        }
+        setWeight(chieurong){
+            this.width=chieurong;
+        }
+
+    }
+    let hcn = new RectagleClass(0,0);
+    function ve(hcn) {
+        let ve = document.getElementById("cv");
+        let v1 =ve.getContext("2d");
+        v1.fillStyle="yellow";
+        v1.fillRect(10,10,hcn.getWeight(),hcn.getHeight());
+    }
+
+    function nhap() {
+        let a = parseInt(document.getElementById("hei").value);
+        let b = parseInt(document.getElementById("wei").value);
+        hcn.setHeight(a);
+        hcn.setWeight(b);
+        document.getElementById("result").innerHTML = "<br>" + "<br>" + "<br>" + "<br>"
+            + "Chiều dài :---" + hcn.getHeight() + "<br>"
+            + "Chiều rộng:---" + hcn.getWeight() + "<br>"
+            + "Chu vi---" + hcn.getPerimeter() + "<br>"
+            + "Diện tích---" + hcn.getAcreage();
+            ve(hcn);
+    }
+</script>
+</body>
+</html>

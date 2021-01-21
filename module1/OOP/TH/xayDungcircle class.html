@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp hình tròn</title>
+</head>
+<body>
+<script>
+    class ClassCircle{
+        constructor(bankinh,mausac) {
+            this.radius =bankinh;
+            this.color =mausac;
+            this.arena = Math.PI *bankinh*bankinh;
+        }
+        getRadius(){
+            return this.radius;
+        }
+        getColor(){
+           return this.color;
+        }
+        getArea(){
+            return this.arena;
+        }
+        setRadius(bankinh){
+            this.radius = bankinh;
+        }
+        setColor(mausac){
+            this.color =mausac;
+        }
+    }
+    let r1 =new ClassCircle(2 ,"RED");
+    let r2 =new ClassCircle(3 ,"yelow");
+    let r3 =new ClassCircle(4 ,"green");
+    let r4 =new ClassCircle(5 ,"blue");
+
+    document.write(r3.getArea() + " ------"+ r2.getArea() );
+</script>
+</body>
+</html>
