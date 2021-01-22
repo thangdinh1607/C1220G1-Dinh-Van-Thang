@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tương tác giữa công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+   class swichButton{
+       constructor(number) {
+           this.button=number;
+       }
+       setButton(number){
+           this.button=number;
+           return number;
+       }
+   }
+   class light {
+       constructor() {
+           this.status = false;
+       }
+
+       buttonlight(number) {
+           if (number % 2 !== 0) {
+               this.status = !this.status
+           }
+       }
+       onOroff(){
+           if(this.status){
+               alert("đèn bật");
+           }else{
+               alert("đèn tắt")
+           }
+       }
+   }
+
+
+   let swich1 = new swichButton(0);
+    let light1= new light(true);
+   let light2= new light(false);
+
+
+   let b=parseInt(prompt("nhập số lần bấm"));
+    light2.buttonlight(swich1.setButton(b));
+    light2.onOroff();
+   console.log(light2);
+   console.log(swich1);
+</script>
+</body>
+</html>

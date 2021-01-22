@@ -8,11 +8,17 @@
                     <h2 style="text-align: center">Customer Infomation</h2>
 <form>
 Full Name                <input type="text" placeholder="Nguyễn Văn A" id="name"><br><br>
-CMND                    <input type="number" placeholder="123456789" id="cmnd" onchange="ktcmnd()"><br><br>
-Birth Day               <input type="date" placeholder="Nguyễn Văn A"id="bd"><br><br>
-Email                   <input type="text" placeholder="abc@abc.com"id="email" onchange="ktemai()"><br><br>
-Address                 <input type="text" placeholder=""id="adr"><br><br>
-                         <input type="button" onclick="nhap()" value="Nhập"><button type="reset">Reset</button>
+CMND                    <input type="number" placeholder="123456789" id="cm" onchange="checkcmnd()"><br><br>
+Birth Day               <input type="date" placeholder="Nguyễn Văn A" id="bd" onchange=""><br><br>
+Email                   <input type="text" placeholder="abc@abc.com" id="email"><br><br>
+Address                <select id="adr">
+                                        <option value="Đà Nẵng"> Đà Nẵng</option>
+                                        <option value="Huế">Huế</option>
+                                        <option value ="Quảng Nam">Quảng Nam</option>
+                                        <option value ="Other">Other</option>
+
+                        </select><br><br>
+                         <input type="button" onclick="nhap()" value="Nhập"> <button type="reset">Reset</button>
 
  </form>
 
@@ -21,17 +27,17 @@ Discount                   <input type="number" id="dc"><br><br>
 Rent Days                   <input type="number" id="rd"><br><br>
 Customer Type
                             <select id="ct" >
-                                        <option value="member"> Member</option>
-                                        <option value="silver">Silver</option>
-                                        <option value ="gold">Gold</option>
-                                        <option vale ="patinium">Platinum</option>
-                                        <option value="diamond">Diamond</option>
+                                        <option value="1"> Member</option>
+                                        <option value="2">Silver</option>
+                                        <option value ="3">Gold</option>
+                                        <option value ="4">Platinum</option>
+                                        <option value="5">Diamond</option>
                             </select><br><br>
 Type of Sevice
                                 <select id="tos">
-                                        <option value="vilar"> Villar</option>
-                                        <option value="house">House</option>
-                                        <option value="room">Room</option>
+                                        <option value="11"> Villar</option>
+                                        <option value="22">House</option>
+                                        <option value="33" >Room</option>
                                 </select><br><br>
 Type of Room
                                 <select>
@@ -40,31 +46,23 @@ Type of Room
                                         <option> Normal</option>
                                 </select><br><br>
                                 <button>Nhập</button>
-<p id="thongtin"></p>
-
+<p id="tt"</p>
 <script>
-
             function nhap() {
-                let name= "Full name :" + document.getElementById("name").value;
-                let cmnd ="CMND" + document.getElementById("cmnd").value;
-                let birthday = "Birthday" + document.getElementById("bd").value;
-                let email = "Email" + document.getElementById("email").value;
-                let adr = "Address" + document.getElementById("adr").value;
-                   infomation = name +"<br>"+ cmnd +"<br>"+ birthday +"<br>" + email+"<br>" + adr;
-                   document.getElementById("thongtin").innerHTML = infomation ;
-                   alert("Nhập thành công");
+                let name = "Full name :" + document.getElementById("name").value;
+                let cm = "CM :" + document.getElementById("cm").value;
+                let birthday = "Birthday :" + document.getElementById("bd").value;
+                let email = "Email :" + document.getElementById("email").value;
+                let adr = "Address :" + document.getElementById("adr").value;
+                document.getElementById("tt").innerHTML ="Thông tin khách hàng" + "<br>"+name + "<br>" + cm + "<br>" + birthday + "<br>" + email + "<br>" + adr;
+                alert("Nhập thành công");
             }
-            function ktcmnd() {
-                let cmnd =document.getElementById("cmnd").value;
-                    if(cmnd.length!=9){
-                        alert("Số CMND không hợp lệ");
-                    }
-            }
-            function ktemai() {
-                let email = "Email" + document.getElementById("email").value;
-
-
-
+            function checkcmnd() {
+                        let cm =document.getElementById("cm").value;
+                        if(cm.length!==9){
+                                alert("Nhập sai");
+                            }
+                        }
 
 </script>
 
