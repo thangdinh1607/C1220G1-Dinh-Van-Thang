@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study1</title>
+</head>
+<body>
+<script>
+    let nameCustomer         =prompt("Nhập tên khách hàng");
+    let idCard               =parseInt(prompt("Nhập Chứng mình nhân dân "));
+    let birthDay             =prompt("Nhập ngày sinh");
+    let email                =prompt("Nhập email :");
+    let address              =prompt("Address");
+    let inFomation=         "1.Full Name :" + nameCustomer +"\n"+
+                            "2.CMND :" + idCard +"\n"+
+                            "3.BirthDay :" + birthDay +"\n"+
+                            "4.Email :" + email +"\n"+
+                            "5.Address :" + address +"\n";
+    // alert(infomation);
+    let typeCustomer         =prompt("Type of Customer :");
+    let disCount             =parseInt(prompt("Discount(%) :"));
+    let numberOfPeple        =parseInt(prompt("Amount :"));
+    let rentDays             =parseInt(prompt("Rent Days :"));
+    let typeOfSevice         =prompt("Type of Service :");
+    let typeOfRoom           =prompt("Type of Room :");
+    let costTypeofService;
+                            if(typeOfSevice === "Villa"){
+                                costTypeofService=500;
+                            }else if(typeOfSevice === "House"){
+                                costTypeofService=300;
+                            }else{
+                                costTypeofService=100;
+                            }
+    let cost                = costTypeofService*rentDays*(1-disCount/100);
+    let costInfomation      ="6.Type Customer: " + typeCustomer +"\n"+
+                             "7.Dis Count :" +disCount +"\n" +
+                             "8.Amount:" + numberOfPeple +"\n"+
+                             "9.Ren Days " +rentDays+"\n"+
+                             "10.Type of Sevice : " +typeOfSevice+"\n"+
+                             "11.Type of Room :" +typeOfRoom +"\n"+
+                             "12.Cost (USD):" + cost ;
+    // alert(costInfomation);
+    alert(inFomation +costInfomation);
+</script>
+</body>
+</html>

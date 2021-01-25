@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study</title>
+</head>
+<body>
+<script>
+
+    let fullName =prompt("Nhập tên khách hàng");
+    let cmnd =parseInt(prompt("Nhập Chứng mình nhân dân "));
+    let birthDay=prompt("Nhập ngày sinh");
+    let email=prompt("Nhập email :");
+    let address=prompt("Address");
+    let infomation=        "1.Full Name :" + fullName +"\n"+
+                            "2.CMND :" + cmnd +"\n"+
+                            "3.BirthDay :" + birthDay +"\n"+
+                            "4.Email :" + email +"\n"+
+                            "5.Address :" + address +"\n";
+    alert(infomation);
+    let typeCustomer = prompt("Type of Customer :");
+    let disCount=parseInt(prompt("Discount(%) :"));
+    let amount=parseInt(prompt("Amount :"));
+    let rentDays =parseInt(prompt("Rent Days :"));
+    let typeOfSevice=prompt("Type of Sevice :");
+    let typeOfRoom=prompt("Type of Room :");
+    let a;
+    if(typeOfSevice === "Villa"){
+        a=500;
+    }else if(typeOfSevice === "House"){
+        a=300;
+    }else{
+        a=100;
+    }
+    let cost = a*rentDays*(1-disCount/100);
+    let costInfomation ="6.Type Customer: " + typeCustomer +"\n"+
+            "7.Dis Count :" +disCount +"\n" +
+            "8.Amount:" + amount +"\n"+
+            "9.Ren Days " +rentDays+"\n"+
+            "10.Type of Sevice : " +typeOfSevice+"\n"+
+            "11.Type of Room :" +typeOfRoom +"\n"+
+            "12.Cost (USD):" + cost ;
+    // alert(infomation +costInfomation);
+    let show = parseInt(prompt("1.Show Information Customer" +"\n" +
+                                "2.Edit Information Customer." +"\n" +
+                                "3.Show the amount to be paid after discount")) ;
+                switch (show) {
+                    case 1:
+                        alert(infomation +costInfomation);
+                        break;
+                    case 2:
+                        let editInfomation =parseInt(prompt("Edit"+"\n" +infomation+ costInfomation)) ;
+                                switch (editInfomation) {
+                                    case 1:
+                                        let fullName =prompt("Nhập tên khách hàng");
+                                        break;
+                                    case 2:
+                                        let cmnd =parseInt(prompt("Nhập Chứng mình nhân dân "));
+                                        break;
+                                    case 3:
+                                        let birthDay=prompt("Nhập ngày sinh");
+                                        break;
+                                    case 4:
+                                        let email=prompt("Nhập email :");
+                                        break;
+                                    case 5:
+                                        let address=prompt("Address");
+                                        break;
+                                    case 6 :
+                                        let typeCustomer = prompt("Type of Customer :");
+                                        alert(editInfomation);
+                                        break;
+                                    case 7 :
+                                        let disCount=parseInt(prompt("Discount(%) :"));
+                                        break;
+                                    case 8 :
+                                        let amount=parseInt(prompt("Amount :"));
+                                        break;
+                                    case 9 :
+                                        let rentDays =parseInt(prompt("Rent Days :"));
+                                        break;
+                                    case 10 :
+                                        let typeOfSevice=prompt("Type of Sevice :");
+                                        break;
+                                    case 11 :
+                                        let typeOfRoom=prompt("Type of Room :");
+                                        break;
+                                    default :
+                                        alert("Nhập sai");
+                                }
+                        alert(infomation +costInfomation);
+                    case 3:
+                        prompt(cost);
+                        break;
+                        default :
+                            alert("Nhập sai");
+    }
+
+
+</script>
+</body>
+</html>

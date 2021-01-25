@@ -8,8 +8,8 @@
                     <h2 style="text-align: center">Customer Infomation</h2>
 <form>
 Full Name                <input type="text" placeholder="Nguyễn Văn A" id="name"><br><br>
-CMND                    <input type="number" placeholder="123456789" id="cm" onchange="checkcmnd()"><br><br>
-Birth Day               <input type="date" placeholder="Nguyễn Văn A" id="bd" onchange=""><br><br>
+CMND                    <input type="number" placeholder="123456789" id="cm" ><br><br>
+Birth Day               <input type="date" placeholder="Nguyễn Văn A" id="bd" ><br><br>
 Email                   <input type="text" placeholder="abc@abc.com" id="email"><br><br>
 Address                <select id="adr">
                                         <option value="Đà Nẵng"> Đà Nẵng</option>
@@ -23,7 +23,7 @@ Address                <select id="adr">
  </form>
 
                 <h2 style="text-align: center">Price List</h2>
-Discount                   <input type="number" id="dc"><br><br>
+Discount                   <input type="number" id="dc"><p id="dc1"></p><br>
 Rent Days                   <input type="number" id="rd"><br><br>
 Customer Type
                             <select id="ct" >
@@ -34,19 +34,20 @@ Customer Type
                                         <option value="5">Diamond</option>
                             </select><br><br>
 Type of Sevice
-                                <select id="tos">
-                                        <option value="11"> Villar</option>
-                                        <option value="22">House</option>
-                                        <option value="33" >Room</option>
-                                </select><br><br>
+                                <select id="tos" onchange="typeofSevice()">
+                                        <option value="500"> Villar</option>
+                                        <option value="300">House</option>
+                                        <option value="100" >Room</option>
+                                </select><p id="tos1"></p>
 Type of Room
-                                <select>
+                                <select id ="tor">
                                         <option> Vip</option>
                                         <option>Business</option>
                                         <option> Normal</option>
                                 </select><br><br>
-                                <button>Nhập</button>
-<p id="tt"</p>
+                                <button onclick="cost()">Nhập</button>
+                    <p id="tt"></p>
+                    <p id="cost"></p>
 <script>
             function nhap() {
                 let name = "Full name :" + document.getElementById("name").value;
@@ -57,12 +58,20 @@ Type of Room
                 document.getElementById("tt").innerHTML ="Thông tin khách hàng" + "<br>"+name + "<br>" + cm + "<br>" + birthday + "<br>" + email + "<br>" + adr;
                 alert("Nhập thành công");
             }
-            function checkcmnd() {
-                        let cm =document.getElementById("cm").value;
-                        if(cm.length!==9){
-                                alert("Nhập sai");
-                            }
-                        }
+            function cost() {
+                let typeofSevice = document.getElementById("tos").value;
+                let renDays = document.getElementById("rd").value;
+                let discount = document.getElementById("dc").value;
+                let cost = typeofSevice*renDays*(1-discount/100);
+                document.getElementById("cost").innerHTML = "Discount(%) :" + discount   + "<br>" +
+                                                            "Rent Days(day) :" + renDays +"<br>"+
+                                                            "Type of Sevice :" +typeofSevice +"<br>" +
+                                                            "Cost :" + cost + " USD";
+            }
+            function typeofSevice() {
+                let typeofSevice = document.getElementById("tos").value;
+                document.getElementById("tos1").innerHTML=typeofSevice+" USD";
+            }
 
 </script>
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeCover</title>
+</head>
+<body>
+<script>
+    function pickingNumbers(a) {
+        a.sort(function (a,b){return a-b});
+        let b =[];
+        for(let i=0;i<a.length;i++){
+            for(let j=0;j<a.length;j+=2){
+                if(Math.abs(a[j]-a[j+1])<2){
+                    if(b.length<6){
+                        b.push(a[j]);
+                        b.push(a[j+1]);
+                    }else{
+                        break;
+                    }
+
+                }
+
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

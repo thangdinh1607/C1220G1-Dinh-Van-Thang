@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study4</title>
+</head>
+<body>
+<script>
+
+    let arrAddnNameCustomer = [];
+    let i=1;
+    let customer=["thang","dinh","van","bbb","ccc","dddd","aaa"];
+    let str="";
+    let str1="";
+    let str2="";
+    let check;
+
+             do{
+                        let menu =parseInt(prompt("1.Add Name Customer"+ "\n"+"2.Delete Customer"));
+                        if(menu === 1){
+                                        let numberOfCustomer=parseInt(prompt("Number of Customer"));
+
+                                                        do{
+                                                            let nameCustomer =prompt("Name Customer " +i);
+                                                            arrAddnNameCustomer.push(nameCustomer);
+                                                            i++;
+                                                        }while (numberOfCustomer>=i);
+
+                                        let arrAddnNameCustomer1=arrAddnNameCustomer.sort();
+
+                                                        for(let i=0;i<arrAddnNameCustomer1.length;i++){
+                                                            str+=(i+1)+"."+arrAddnNameCustomer1[i]+"\n";
+                                                        }
+
+                                        alert(str);
+                                        check=false;
+                        }else if(menu===2){
+                                                        for(let i=0;i<customer.length;i++){
+                                                            str1+=(i+1)+"."+customer[i]+"\n";
+                                                        }
+
+                                        let numberDelete = parseInt(prompt("Number Delete" +"\n" + str1));
+
+                                        if(numberDelete >0 &&numberDelete<=customer.length){
+                                                        customer.splice(numberDelete-1,1);
+                                                        for(let i=0;i<customer.length;i++){
+                                                            str2+=(i+1)+"."+customer[i]+"\n";
+                                                        }
+                                                        alert(str2);
+                                        }
+
+                                        check=false;
+
+                        }else{
+                                        alert("Nhập sai");
+                                        check=true;
+                        }
+             }while (check);
+</script>
+</body>
+</html>

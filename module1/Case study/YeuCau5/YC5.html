@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study 5</title>
+</head>
+<body>
+<script>
+    let arrListCustomer=[];
+    let arrayname=[];
+    let strListCustomer="";
+    let nameCustomer;
+    let idCard;
+    let birthDay;
+    let email;
+    let address;
+    let typeCustomer;
+    let disCount;
+    let numberOfPeople;
+    let rentDays;
+    let typeOfService;
+    let typeOfRoom;
+    let costTypeofService;
+    let cost;
+    let inFormation;
+    let mainmenu;
+    function mainMenu(){
+        mainmenu                  =parseInt(prompt("1-Add New Customer. \n" +
+                                                   "2-Display Information Customer.\n" +
+                                                   "3-Edit Information Customer.\n" +
+                                                   "4-Delete Customer.\n" +
+                                                   "5-Exit.")) ;
+        switch (mainmenu) {
+             case 1 :
+                 addNewCustomer(arrListCustomer);
+             break;
+             case 2 :
+                 displayInformationCustomer(arrayname);
+             break;
+             case 3:
+                 editInformationCustomer(arrListCustomer);
+             break;
+             case 4 :
+                 deleteCustomer(arrListCustomer);
+             break;
+             case 5 :
+                 alert("EXIT");
+                 break;
+             default :
+                 mainMenu();
+
+
+
+        }
+    }
+    function addNewCustomer() {
+        nameCustomer         =prompt("Enter Name Customer");
+         idCard               =parseInt(prompt("Enter ID Card"));
+        birthDay             =prompt("Enter Birth Day");
+         email                =prompt("Enter Email :");
+        address              =prompt("Enter Address");
+        typeCustomer         =prompt("Enter Type of Customer :");
+        disCount             =parseInt(prompt("Enter Discount(%) :"));
+        numberOfPeople       =parseInt(prompt("Enter Number Of People :"));
+         rentDays             =parseInt(prompt("Enter Rent Days :"));
+        typeOfService        =prompt("Enter Type of Service :");
+        typeOfRoom           =prompt("Enter Type of Room :");
+        costTypeofService;
+                            if(typeOfService === "Villa"){
+                                    costTypeofService=500;
+                            }else if(typeOfService === "House"){
+                                    costTypeofService=300;
+                            }else{
+                                    costTypeofService=100;
+                            }
+        cost                 = costTypeofService*rentDays*(1-disCount/100);
+        inFormation           =     "1.Full Name :" + nameCustomer +"\n"+
+                                    "2.CMND :" + idCard +"\n"+
+                                    "3.BirthDay :" + birthDay +"\n"+
+                                    "4.Email :" + email +"\n"+
+                                    "5.Address :" + address +"\n"+
+                                    "6.Type Customer: " + typeCustomer +"\n"+
+                                    "7.Dis Count :" +disCount +"\n" +
+                                    "8.Number of People:" + numberOfPeople +"\n"+
+                                    "9.Ren Days " +rentDays+"\n"+
+                                    "10.Type of Sevice : " +typeOfService+"\n"+
+                                    "11.Type of Room :" +typeOfRoom +"\n"+
+                                    "12.Cost (USD):" + cost ;
+
+        arrListCustomer.push(inFormation);
+        arrListCustomer.sort();
+        arrayname.push(nameCustomer);
+        displayInformationCustomer(arrayname);
+        mainMenu();
+        return arrListCustomer;
+    }
+
+    function displayInformationCustomer(arr) {
+        let nameCustomer="";
+        let i;
+        for(i=0;i<arr.length;i++){
+             nameCustomer+= (i+1) +"-"+arr[i]+"\n";
+        }
+        alert(nameCustomer);
+        mainMenu();
+        return nameCustomer;
+    }
+
+
+
+
+    // function editInformationCustomer(arr) {
+    //
+    //     }
+
+
+
+
+    //
+    // function deleteCustomer(arr) {
+    //         let deleteCustomer =parseInt(prompt(("nhập")));
+    //         for(let i=0;i<arr.length;i++){
+    //             arrListCustomer.splice(deleteCustomer-1,1);
+    //         }
+    //
+    // }
+    //
+
+
+
+mainMenu();
+
+</script>
+</body>
+</html>

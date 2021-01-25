@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study3</title>
+</head>
+<body>
+<script>
+///Name Customer
+        let name1="";
+        let nameCustomer = prompt("Name Customer");
+                for(let i=0;i<nameCustomer.length;i++)  {
+                    if(nameCustomer.charAt(i-1)===" " && nameCustomer.charAt(i)===" "){
+                        continue;
+                    }else if(i===0 || nameCustomer.charAt(i-1)===" " && nameCustomer.charAt(i)!==" ") {
+                        name1+=nameCustomer.charAt(i).toUpperCase();
+                    }else {
+                        name1+=nameCustomer.charAt(i).toLowerCase();
+                    }
+                }
+///Email----------------------------------------------------------------------------------------------------------------
+    let check;
+    let count1 =0;
+    let count2 =0;
+    let email1="";
+    do{
+
+            let email=prompt("Email Customer");
+                for(let i=0;i<email.length;i++){
+                    if(email.charAt(i)==="@"){
+                        count1++;
+                    }
+                    email1+=email.charAt(i)
+                }
+
+                 for(let i=0;i<email.length;i++){
+                     if(email.charAt(i)==="."){
+                        count2++;
+                     }
+                 }
+                if(count1===1 && count2>=1){
+                    check=false;
+                }else{
+                    alert("Nhập sai định dạng abc@abc.abc");
+                    check=true;
+                }
+    }while (check);
+// ////ID Card----------------------------------------------------------------------------------------------------------
+    let idCard1="";
+    do{
+             let idCard =parseInt(prompt("ID Card(123456789)"));
+                idCard1=idCard;
+                 if(idCard<1000000000 &&idCard>99999999){
+                     check=false;
+                 }else{
+                     alert("Nhập sai");
+                     check=true;
+                 }
+
+    }while (check);
+////BirthDay------------------------------------------------------------------------------------------------------------
+    let birthDay1="";
+    do{
+            let birthDay=prompt("Birth Day(DD/MM/YYYY)");
+            let day=parseInt(birthDay.slice(0,2));
+            let month=parseInt(birthDay.slice(3,5));
+            let year=parseInt(birthDay.slice(6,10));
+             birthDay1=birthDay;
+                        if(birthDay.length === 10){
+                                if( day>=1 && day<=31 &&
+                                    month>=1 && month <=12 &&
+                                    year>1900 && year<2022 ){
+                                        check=false;
+                                }else {
+                                        alert("Nhập sai định dạng");
+                                        check=true;
+                                }
+                        }else{
+                                         alert("Nhập sai định dạng");
+                                         check=true;
+                            }
+    }while (check);
+
+///Rent Days && Number of People----------------------------------------------------------------------------------------
+    let rentDays1="";
+    let numberOfPeople1="";
+     do{
+         let rentDays =prompt("RentDays");
+         rentDays1=rentDays;
+                 if(parseInt(rentDays)==rentDays &&rentDays>0){
+                     check=false;
+                 }else{
+                     alert("Nhập lại đê");
+                     check=true;
+                 }
+     }while (check);
+    do{
+        let numberOfPeople =prompt("Number of People");
+        numberOfPeople1=numberOfPeople;
+        if(parseInt(numberOfPeople)==numberOfPeople &&numberOfPeople>0){
+            check=false;
+        }else{
+            alert("Nhập lại đê");
+            check=true;
+        }
+    }while (check);
+
+///---------------------------------------------------------------------------------------------------------------------
+alert(  "1.Name Customer :" + name1 +"\n" +
+         "2.Email Customer :" + email1+"\n"+
+        "3.Birth Day"+ birthDay1+"\n"+
+        "4.Rent Days"+ rentDays1+"\n"+
+        "5.Number of People"+ numberOfPeople1 +"\n");
+
+</script>
+</body>
+</html>

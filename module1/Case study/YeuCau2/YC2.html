@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study2</title>
+</head>
+<body>
+<script>
+    let nameCustomer        = "Đinh Văn Thăng";
+    let idCard              = "123456789";
+    let birthDay            = "16/07/1992";
+    let email               = "thangdinh1607@gmail.com";
+    let address             = "Đà Nẵng";
+    let typeOfCustomer      ="Diamond";
+    let discount            =10;
+    let NumberOfPeole       =2;
+    let renDays             =5;
+    let typeOfService       ="Villa";
+    let typeOfRoom          ="Vip";
+    let inFormation=        "1.Name Customer :" +nameCustomer+"\n" +
+                            "2.ID Card :" + idCard +"\n"+
+                            "3.BirthDay :"+ birthDay+"\n"+
+                            "4.Email :" +email+"\n"+
+                            "5.Type Of Customer :"+typeOfCustomer +"\n"+
+                            "6.DisCount :"+discount+"\n"+
+                            "7.Number of People:"+NumberOfPeole+"\n"+
+                            "8.Rent Day:"+renDays+"\n"+
+                            "9.Type Of Service"+typeOfService+"\n"+
+                            "10.Type Of Room"+typeOfRoom+"\n";
+    let afterDiscount =0;
+                            if(address==="Đà Nẵng"){
+                                afterDiscount+=20;
+                            }else if(address==="Huế"){
+                                afterDiscount+=10;
+                            }else if(address==="Quảng Nam") {
+                                afterDiscount+=5;
+                            }
+                                    if(renDays>=7){
+                                        afterDiscount+=30;
+                                    }else if(renDays>=5 && renDays<=7){
+                                        afterDiscount+=10;
+                                    }else if(renDays>=2&&renDays<=4) {
+                                        afterDiscount+=5;
+                                    }
+                                            if(typeOfCustomer==="Diamond"){
+                                                afterDiscount+=15;
+                                            }else if(typeOfCustomer==="Platium"){
+                                                afterDiscount+=10;
+                                            }else if(typeOfCustomer==="Gold") {
+                                                afterDiscount+=5;
+                                            }else if(typeOfCustomer==="Silver"){
+                                                afterDiscount+=2;
+                                            }else{
+                                                afterDiscount+=0;
+                                            }
+
+    let costTypeOfService;
+                                            if(typeOfService==="Villa"){
+                                                costTypeOfService = 500;
+                                            }else if(typeOfService==="House"){
+                                                costTypeOfService=300;
+                                            }else{
+                                                costTypeOfService=1000
+                                            }
+    let cost =costTypeOfService*renDays-afterDiscount;
+
+    let show = parseInt(prompt("1.Show Information Customer." + "\n" +
+                                "2.Edit Information Customer."+"\n"+
+                                "3.Show the amount to be paid after discount"));
+                switch (show) {
+                    case 1 :
+                        alert(inFormation);
+                        break;
+                    case 2 :
+                        let edit =parseInt(prompt(inFormation));
+                        switch (edit) {
+                            case 1:
+                                nameCustomer = prompt("Name Customer");
+                                break;
+                            case 2:
+                                idCard = parseInt(prompt("ID Card"));
+                                break;
+                            case 3:
+                                birthDay=prompt("Birth Day ");
+                                break;
+                            case 4:
+                                email=prompt("Email ");
+                                break;
+                            case 5:
+                                typeOfCustomer=prompt("Type Of Customer");
+                                break;
+                            case 6:
+                                discount=prompt("Dis Count ");
+                                break;
+                            case 7:
+                                numberOfPeole=prompt("Number Of People ");
+                                break;
+                            case 8:
+                                renDays=prompt("Rent Days ");
+                                break;
+                            case 9:
+                                typeOfService=prompt("Type Of Service: ");
+                                break;
+                            case 10:
+                                typeOfRoom=prompt("Type of Room ");
+                                break;
+                            default :
+                                alert("Nhập sai");
+
+                        }
+                                alert("1.Name Customer :" +nameCustomer+"\n" +
+                                    "2.ID Card :" + idCard +"\n"+
+                                    "3.BirthDay :"+ birthDay+"\n"+
+                                    "4.Email :" +email+"\n"+
+                                    "5.Type Of Customer :"+typeOfCustomer +"\n"+
+                                    "6.DisCount :"+discount+"\n"+
+                                    "7.Amount of People:"+NumberOfPeole+"\n"+
+                                    "8.Rent Day:"+renDays+"\n"+
+                                    "9.Type Of Service:"+typeOfService+"\n"+
+                                    "10.Type Of Room:"+typeOfRoom+"\n");
+                        break;
+                    case 3 :
+                         alert("Cost "+cost);
+                        break;
+                        default:
+                            alert("Nhập sai");
+
+                }
+
+
+</script>
+</body>
+</html>
