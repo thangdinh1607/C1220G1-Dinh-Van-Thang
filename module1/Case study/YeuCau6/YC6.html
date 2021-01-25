@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study6</title>
+</head>
+<body>
+<script>
+    let listCustomers=[];
+    class Customer{
+        constructor(ten,idcard,ngaysinh,email,diachi,songuoi,ngaythue,giamgia,kieukhachhang,kieudichvu,kieuphong) {
+            this.name =ten;
+            this.idcard=idcard;
+            this.birthday=ngaysinh;
+            this.email=email;
+            this.address=diachi;
+            this.numberOfPeple=songuoi;
+            this.rentDays=ngaythue;
+            this.disCount=giamgia;
+            this.typeCustomer=kieukhachhang;
+            this.typeOfService=kieudichvu;
+            this.typeOfRoom=kieuphong;
+        }
+        getName(){
+            return this.name;
+        }
+        getIdCard(){
+            return this.idcard;
+        }
+        getBirthDay(){
+            return this.birthday;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getAddress(){
+            return this.address;
+        }
+        getNumberOfPeople(){
+            return this.numberOfPeple;
+        }
+        getRentDay(){
+            return this.rentDays;
+        }
+        getDiscount(){
+            return this.disCount;
+        }
+        getTypeCustomer(){
+            return this.typeCustomer;
+        }
+        getTypeOfService(){
+            return this.typeOfService;
+        }
+        getTypeOfRoom(){
+            return this.typeOfRoom;
+        }
+
+        setName(ten){
+            return this.name=ten;
+        }
+        setIdCard(idcard){
+            return this.idcard=idcard;
+        }
+        setBirthDay(ngaysinh){
+            return this.birthday=ngaysinh;
+        }
+        setEmail(email){
+            return this.email=email;
+        }
+        setAddress(diachi){
+            return this.address=diachi;
+        }
+        setNumberOfPeople(songuoi){
+            return this.numberOfPeple=songuoi;
+        }
+        setRentDay(ngaythue){
+            return this.rentDays=ngaythue;
+        }
+        setDiscount(giamgia){
+            return this.disCount=giamgia;
+        }
+        setTypeCustomer(kieukhachhang){
+            return this.typeCustomer=kieukhachhang;
+        }
+        setTypeOfService(kieudichvu){
+            return this.typeOfService=kieudichvu;
+        }
+        setTypeOfRoom(kieuphong){
+            return this.typeOfRoom=kieuphong;
+        }
+        tinhTien(){
+            let costTypeofService;
+            if(this.typeOfService === "Villa"){
+                costTypeofService=500;
+            }else if(this.typeOfService === "House"){
+                costTypeofService=300;
+            }else {
+                costTypeofService=100;
+            }
+            let cost =costTypeofService*rentDays*(1-disCount/100);
+        }
+    }
+    function addNewCustomer() {
+        let customer=[];
+        let check;
+        let idCard;
+        let birthDay;
+        let nameCustomer         =prompt("Nhập tên khách hàng");
+
+        do{
+            idCard               =parseInt(prompt("Nhập Chứng mình nhân dân "));
+            if(!isNaN(idCard) && idCard==parseInt(idCard) && idCard>999999999&& idCard<1000000000 ){
+                check=false;
+            }else{
+                check=true;
+            }
+        }while (check);
+        do{
+            birthDay         =prompt("Nhập ngày sinh");
+            if()
+
+        }while ();
+
+        let email                =prompt("Nhập email :");
+        let address              =prompt("Address");
+        let typeCustomer         =prompt("Type of Customer :");
+        let disCount             =parseInt(prompt("Discount(%) :"));
+        let numberOfPeple        =parseInt(prompt("Amount :"));
+        let rentDays             =parseInt(prompt("Rent Days :"));
+        let typeOfService         =prompt("Type of Service :");
+        let typeOfRoom           =prompt("Type of Room :");
+        customer.push(nameCustomer,idCard,birthDay,email,address,typeCustomer,discount,numberOfPeple,rentDays,typeOfService,typeOfRoom);
+        listCustomers.push(customer);
+    }
+
+    
+</script>
+</body>
+</html>
