@@ -215,7 +215,8 @@ let arrListEmployee=[];
             "3.Display total pay of customer" +"\n"+
             "4.Edit infomation customer"+"\n"+
             "5.Delete customer" +"\n"+
-            "6.Exit"));
+            "6.MenuEmployee"+"\n"+
+            "7.Exit"));
         switch (menu) {
             case 1:
                    addNewCustomer();
@@ -233,7 +234,7 @@ let arrListEmployee=[];
                     deleteCustomer(arrlistCustomers);
                 break;
             case 6:
-
+                    menuEmployee(arrListEmployee);
                 break;
             case 7:
                 alert("EXIT");
@@ -513,15 +514,37 @@ class Employee{
                 }else if(this.position==="Sale"){
                     return  this.salary=salary+300;
                 }else if(this.position==="Marketing"){
-                    return  this.position=salary+100;
+                    return  this.salary=salary+100;
                 }else{
-                    return this.position=salary;
+                    return this.salary=salary;
                 }
             }
 
 }
+function menuEmployee() {
+    let menuEmployee = parseInt(prompt( "1.Add new Employees "+"\n"+
+                                        "2.Display information Employees"+"\n"+
+                                        "3.Salary of Employees" + "\n"+
+                                        "4.Exit"));
+    switch (menuEmployee) {
+        case 1 :
+            addNewEmployee(arrListEmployee);
+            break;
+        case 2 :
+            displayInformationEmployee(arrListEmployee);
+            break;
+        case 3 :
+            salaryOfEmployees(arrListEmployee);
+            break;
+        case 4 :
+            alert("Exit");
+            break;
+            default:
+             mainmenu();
+    }
+}
 function addNewEmployee() {
-
+    let employee1 = new Employee();
     let nameEmployee = prompt("Nhập Họ và tên");
     let birthDayEmployee = prompt("Enter birthday");
     let idCardEmployee = prompt("Enter idCard");
@@ -529,7 +552,7 @@ function addNewEmployee() {
     let emailEmployee = prompt("Enter Email");
     let levelEmployee = prompt("Enter level");
     let positionEmployee = prompt("Enter Position");
-    let salaryEmployee = prompt("Enter Salary");
+    let salaryEmployee = parseInt(prompt("Enter Salary")) ;
     employee1.setName(nameEmployee);
     employee1.setBirthDay(birthDayEmployee);
     employee1.setIdCard(idCardEmployee);
@@ -539,16 +562,58 @@ function addNewEmployee() {
     employee1.setPosition(positionEmployee);
     employee1.setSalary(salaryEmployee);
     arrListEmployee.push(employee1);
-    alert(  "1.NameEmployee"+employee1.getName()+"\n"+
-            "2.BirthDayEmployee " +employee1.getBirthDay()+"\n"+
-            "3.idCardEmployee " +employee1.getIdCard()+"\n"+
-            "4.phoneNumberEmployee " +employee1.getPhoneNumber()+"\n"+
-            "5.emailEmployee " +employee1.getEmail()+"\n"+
-            "6.levelEmployee " +employee1.getBirthDay()+"\n"+
-            "7.positionEmployee " +employee1.getPosition()+"\n"+
-            "8.salaryEmployee" +employee1.getSalary()+"\n");
+    arrListEmployee.sort();
+    alert(  "1.NameEmployee :"+employee1.getName()+"\n"+
+            "2.BirthDayEmployee : " +employee1.getBirthDay()+"\n"+
+            "3.idCardEmployee :" +employee1.getIdCard()+"\n"+
+            "4.phoneNumberEmployee :" +employee1.getPhoneNumber()+"\n"+
+            "5.Level :"+employee1.getLevel()+
+            "6.emailEmployee :" +employee1.getEmail()+"\n"+
+            "7.levelEmployee :" +employee1.getBirthDay()+"\n"+
+            "8.positionEmployee :" +employee1.getPosition()+"\n"+
+            "9.salaryEmployee :" +employee1.getSalary()+"\n");
+    menuEmployee();
 }
-let employee1 = new Employee();
+function displayInformationEmployee(arr) {
+    let nameEmployee = "";
+    let i;
+    for (i = 0; i < arr.length; i++) {
+        nameEmployee += (i + 1) + "." + arr[i].getName() + "\n";
+    }
+    nameEmployee += (i + 1) + ".Back";
+    let menuEmployee1 = parseInt(prompt(nameEmployee));
+    if (menuEmployee1 < i + 1) {
+        alert(      "1.NameEmployee :"+arr[menuEmployee1 -1].getName()+"\n"+
+                    "2.BirthDayEmployee :" +arr[menuEmployee1 -1].getBirthDay()+"\n"+
+                    "3.idCardEmployee :" +arr[menuEmployee1 -1].getIdCard()+"\n"+
+                    "4.phoneNumberEmployee :" +arr[menuEmployee1 -1].getPhoneNumber()+"\n"+
+                    "6.Level"+arr[menuEmployee1 -1].getLevel()+
+                    "7.emailEmployee :" +arr[menuEmployee1 -1].getEmail()+"\n"+
+                    "8.levelEmployee :" +arr[menuEmployee1 -1].getBirthDay()+"\n"+
+                    "9.positionEmployee :" +arr[menuEmployee1 -1].getPosition()+"\n"+
+                    "10.salaryEmployee  :" +arr[menuEmployee1 -1].getSalary()+"\n");
+        menuEmployee();
+    } else {
+        menuEmployee();
+    }
+}
+function salaryOfEmployees(arr) {
+    let nameEmployee = "";
+    let i;
+    for (i = 0; i < arr.length; i++) {
+        nameEmployee += (i + 1) + "." + arr[i].getName() + "\n";
+    }
+    nameEmployee += (i + 1) + ".Back";
+    let menuEmployee1 = parseInt(prompt(nameEmployee));
+    if(menuEmployee1< i+1){
+            alert( "1.NameEmployee :"+arr[menuEmployee1 -1].getName()+"\n"+
+                   "2..salaryEmployee  :" +arr[menuEmployee1 -1].getSalary()+"\n");
+        menuEmployee();
+    }else{
+        menuEmployee();
+    }
+}
+
 mainmenu();
 
     
