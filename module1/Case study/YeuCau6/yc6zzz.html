@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study6</title>
+</head>
+<body>
+<script>
+    let listCustomers=[];
+    let listCustomers1= new Customer();
+    class Customer{
+        constructor(ten,idcard,ngaysinh,email,diachi,songuoi,ngaythue,giamgia,kieukhachhang,kieudichvu,kieuphong) {
+            this.name =ten;
+            this.idcard=idcard;
+            this.birthday=ngaysinh;
+            this.email=email;
+            this.address=diachi;
+            this.numberOfPeple=songuoi;
+            this.rentDays=ngaythue;
+            this.disCount=giamgia;
+            this.typeCustomer=kieukhachhang;
+            this.typeOfService=kieudichvu;
+            this.typeOfRoom=kieuphong;
+        }
+        getName(){
+            return this.name;
+        }
+        getIdCard(){
+            return this.idcard;
+        }
+        getBirthDay(){
+            return this.birthday;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getAddress(){
+            return this.address;
+        }
+        getNumberOfPeople(){
+            return this.numberOfPeple;
+        }
+        getRentDay(){
+            return this.rentDays;
+        }
+        getDiscount(){
+            return this.disCount;
+        }
+        getTypeCustomer(){
+            return this.typeCustomer;
+        }
+        getTypeOfService(){
+            return this.typeOfService;
+        }
+        getTypeOfRoom(){
+            return this.typeOfRoom;
+        }
+
+        setName(ten){
+            return this.name=ten;
+        }
+        setIdCard(idcard){
+            return this.idcard=idcard;
+        }
+        setBirthDay(ngaysinh){
+            return this.birthday=ngaysinh;
+        }
+        setEmail(email){
+            return this.email=email;
+        }
+        setAddress(diachi){
+            return this.address=diachi;
+        }
+        setNumberOfPeople(songuoi){
+            return this.numberOfPeple=songuoi;
+        }
+        setRentDay(ngaythue){
+            return this.rentDays=ngaythue;
+        }
+        setDiscount(giamgia){
+            return this.disCount=giamgia;
+        }
+        setTypeCustomer(kieukhachhang){
+            return this.typeCustomer=kieukhachhang;
+        }
+        setTypeOfService(kieudichvu){
+            return this.typeOfService=kieudichvu;
+        }
+        setTypeOfRoom(kieuphong){
+            return this.typeOfRoom=kieuphong;
+        }
+        tinhTien(){
+            let costTypeofService;
+            if(this.typeOfService === "Villa"){
+                costTypeofService=500;
+            }else if(this.typeOfService === "House"){
+                costTypeofService=300;
+            }else {
+                costTypeofService=100;
+            }
+            let cost =costTypeofService*rentDays*(1-disCount/100);
+        }
+    }
+    function addNewCustomer() {
+        let arrcustomer=[];
+        let check;
+        let idCard;
+        let birthDay;
+        let email;
+        let nameCustomer         =prompt("Nhập tên khách hàng");
+        arrcustomer.push(nameCustomer);
+        do{
+            idCard               =parseInt(prompt("Nhập Chứng mình nhân dân "));
+            if(!isNaN(idCard) && idCard==parseInt(idCard) && idCard>99999999&& idCard<1000000000 ){
+                check=false;
+                arrcustomer.push(idCard);
+            }else{
+                alert("Nhập sai định dạng");
+                check=true;
+            }
+        }while (check);
+
+        do{
+            birthDay         =prompt("Nhập ngày sinh");
+            let day =parseInt(birthDay.slice(0,2)) ;
+            let month =parseInt(birthDay.slice(3,5));
+            let year=parseInt(birthDay.slice(6));
+
+            if( day>0 &&day<32 &&
+                month>0 &&month<=12&&
+                year>1990 &&year<2022){
+                check=false;
+                arrcustomer.push(birthDay);
+            }else {
+                alert("Sai định dạng dd/mm/yyyy");
+                check = true;
+
+            }
+        }while (check);
+        //
+        // &&email.charAt(email.search("@"))>3
+        do{
+            email                =prompt("Nhập email :");
+            if(email.search("@")+4<email.lastIndexOf(".")){
+                check = false;
+                arrcustomer.push(email);
+            }else{
+                check =true;
+                alert("nhập sai định dạng");
+            }
+        }while (check);
+
+        let address              =prompt("Address");
+        arrcustomer.push(address);
+        let typeCustomer         =prompt("Type of Customer :");
+        arrcustomer.push(typeCustomer);
+        do{
+            let disCount             =parseInt(prompt("Discount(%) :"));
+
+            if(!isNaN(disCount)){
+                check=false;
+                arrcustomer.push(disCount);
+            }else{
+                check=true;
+                alert("chỉ được nhập số")
+            }
+        }while (check);
+        do{
+            let numberOfPeple        =parseInt(prompt("Amount :"));
+            if(!isNaN(numberOfPeple)){
+                check=false;
+                arrcustomer.push(numberOfPeple);
+            }else{
+                check=true;
+                alert("chỉ được nhập số")
+            }
+        }while (check);
+
+        do{
+            let rentDays             =parseInt(prompt("Rent Days :"));
+            arrcustomer.push(rentDays);
+            if(!isNaN(rentDays)){
+                check=false;
+
+            }else{
+                check=true;
+                alert("chỉ được nhập số")
+            }
+        }while (check);
+
+        let typeOfService         =prompt("Type of Service :");
+        arrcustomer.push(typeOfService);
+        let typeOfRoom           =prompt("Type of Room :");
+        arrcustomer.push(typeOfRoom);
+        // arrcustomer.push(nameCustomer,idCard,birthDay,email,address,typeCustomer,disCount,numberOfPeple,rentDays,typeOfService,typeOfRoom);
+        listCustomers.push(arrcustomer);
+        alert(  "1.Full Name :" + arrcustomer[0] +"\n"+
+            "2.CMND :" + arrcustomer[1] +"\n"+
+            "3.BirthDay :" + arrcustomer[2] +"\n"+
+            "4.Email :" + arrcustomer[3] +"\n"+
+            "5.Address :" + arrcustomer[4] +"\n"+
+            "6.Type Customer: " + arrcustomer[5] +"\n"+
+            "7.Dis Count :" +arrcustomer[6] +"\n" +
+            "8.Amount:" + arrcustomer[7] +"\n"+
+            "9.Ren Days " +arrcustomer[8]+"\n"+
+            "10.Type of Sevice : " +arrcustomer[9]+"\n"+
+            "11.Type of Room :" +arrcustomer[10] +"\n");
+        mainmenu();
+    }
+    function mainmenu(){
+        let menu = parseInt(prompt("Main menu"+"\n"+
+            "1.Add new customer"+"\n"+
+            "2.Display information customer" +"\n"+
+            "3.Display total pay of customer" +"\n"+
+            "4.Edit infomation customer"+"\n"+
+            "5.Delete customer" +"\n"+
+            "6.Exit"));
+        switch (menu) {
+            case 1:
+                addNewCustomer();
+                break;
+            case 2:
+                displayInformationCustomer();
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            default :
+
+        }
+    }
+    function displayInformationCustomer(arr) {
+        let nameCustomer="";
+        for(let i=0;i<arr.length;i++){
+            nameCustomer+=(i+1)+"."+arr[i][0]+"\n";
+        }
+        nameCustomer+=(i+1)+".Back";
+        let menuNameCustomer=parseInt(prompt(nameCustomer));
+    }
+
+    mainmenu();
+</script>
+</body>
+</html>
